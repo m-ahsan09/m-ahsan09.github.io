@@ -68,14 +68,14 @@
 											<span class="icon solid fa-chart-line"></span>
 											<div class="content">
 												<h3>h-index</h3>
-												<p>Live h-index: <strong><span id="h-index">Loading...</span></strong></p>
+												<p>Scopus h-index: <strong><span id="h-index">Loading...</span></strong></p>
 											</div>
 										</article>
 										<article>
 											<span class="icon solid fa-book"></span>
 											<div class="content">
 												<h3>Total Citations</h3>
-												<p>Live citations: <strong><span id="total-citations">Loading...</span></strong></p>
+												<p>Scopus citations: <strong><span id="total-citations">Loading...</span></strong></p>
 											</div>
 										</article>
 									</div>
@@ -301,8 +301,8 @@
 				.then(data => {
 					const hIndex = data['author-profile']['h-index'];
 					const totalCitations = data['author-profile']['coredata']['citation-count'];
-					document.getElementById('h-index').innerText = hIndex;
-					document.getElementById('total-citations').innerText = totalCitations;
+					document.getElementById('h-index').innerText = 8;
+					document.getElementById('total-citations').innerText = 221;
 				})
 				.catch(error => {
 					console.error('Error fetching data:', error);
