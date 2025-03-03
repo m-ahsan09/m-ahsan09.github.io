@@ -58,6 +58,29 @@
 									</span>
 								</section>
 
+							<!-- Section: Research Metrics -->
+								<section>
+									<header class="major">
+										<h2>Research Metrics</h2>
+									</header>
+									<div class="features">
+										<article>
+											<span class="icon solid fa-chart-line"></span>
+											<div class="content">
+												<h3>h-index</h3>
+												<p>Live h-index: <strong><span id="h-index">Loading...</span></strong></p>
+											</div>
+										</article>
+										<article>
+											<span class="icon solid fa-book"></span>
+											<div class="content">
+												<h3>Total Citations</h3>
+												<p>Live citations: <strong><span id="total-citations">Loading...</span></strong></p>
+											</div>
+										</article>
+									</div>
+								</section>
+
 							<!-- Section -->
 							<!-- Hide Start 
 								<section>
@@ -265,6 +288,28 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+
+		<!-- Add this script to fetch and display h-index -->
+		<script>
+			// Replace with your Scopus API key and Author ID
+			const apiKey = 'YOUR_SCOPUS_API_KEY';
+			const authorId = 'YOUR_SCOPUS_AUTHOR_ID';
+
+			// Fetch h-index from Scopus API
+			fetch(`https://api.elsevier.com/content/author/author_id/${authorId}?apiKey=${apiKey}`)
+				.then(response => response.json())
+				.then(data => {
+					const hIndex = data['author-profile']['h-index'];
+					const totalCitations = data['author-profile']['coredata']['citation-count'];
+					document.getElementById('h-index').innerText = hIndex;
+					document.getElementById('total-citations').innerText = totalCitations;
+				})
+				.catch(error => {
+					console.error('Error fetching data:', error);
+					document.getElementById('h-index').innerText = 'Unavailable';
+					document.getElementById('total-citations').innerText = 'Unavailable';
+				});
+		</script>
 
 	</body>
 </html>
