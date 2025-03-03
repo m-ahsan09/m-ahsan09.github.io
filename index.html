@@ -68,14 +68,14 @@
 											<span class="icon solid fa-chart-line"></span>
 											<div class="content">
 												<h3>h-index</h3>
-												<p>Scopus h-index: <strong><span id="h-index">Loading...</span></strong></p>
+												<p>Scopus h-index: <strong><span id="8"></span></strong></p>
 											</div>
 										</article>
 										<article>
 											<span class="icon solid fa-book"></span>
 											<div class="content">
 												<h3>Total Citations</h3>
-												<p>Scopus citations: <strong><span id="total-citations">Loading...</span></strong></p>
+												<p>Scopus citations: <strong><span id="221"></span></strong></p>
 											</div>
 										</article>
 									</div>
@@ -288,28 +288,6 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
-
-		<!-- Add this script to fetch and display h-index -->
-		<script>
-			// Replace with your Scopus API key and Author ID
-			const apiKey = '3a09b77e1dc43477d9bd41e2181f7b8c';
-			const authorId = '57543617600';
-
-			// Fetch h-index from Scopus API
-			fetch(`https://api.elsevier.com/content/author/author_id/${authorId}?apiKey=${apiKey}`)
-				.then(response => response.json())
-				.then(data => {
-					const hIndex = data['author-profile']['h-index'];
-					const totalCitations = data['author-profile']['coredata']['citation-count'];
-					document.getElementById('h-index').innerText = 8;
-					document.getElementById('total-citations').innerText = 221;
-				})
-				.catch(error => {
-					console.error('Error fetching data:', error);
-					document.getElementById('h-index').innerText = 'Unavailable';
-					document.getElementById('total-citations').innerText = 'Unavailable';
-				});
-		</script>
 
 	</body>
 </html>
