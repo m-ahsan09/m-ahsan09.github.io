@@ -67,16 +67,16 @@
             </div>
 
             <ul class="nav nav-justified">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="projects.html">Projects</a></li>
+                <li><a href="index.html">Back to Home</a></li>
+                <li><a href="projects.html">Back to Projects</a></li>
             </ul>
         </div>
 
         <div class="row" style="margin-top: 30px;">
             <div class="col-lg-12">
-                <img src="img/VPS2025.jpg" class="project-header-img" alt="Project Main Image">
-                <h1 style="color: #333;">Vehicle Engine Misfire Detection</h1>
-                <p class="lead" style="color: #666;">Developing robust diagnostic frameworks for internal combustion engines using advanced signal processing.</p>
+                <img src="img/SCADA-01.jpg" class="project-header-img" alt="Project Main Image">
+                <h1 style="color: #333;">SCADA-based condition monitoring and fault detection of wind turbines</h1>
+                <p class="lead" style="color: #666;">Development of an integrated framework for SCADA-based condition monitoring and fault detection of wind turbines, incorporating image analysis and trend monitoring techniques.</p>
             </div>
         </div>
 
