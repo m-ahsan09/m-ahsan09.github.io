@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Project Details | Muhammad Ahsan</title>
+
+    <link href="dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="justified-nav.css" rel="stylesheet">
+
+    <style>
+        /* Custom styles for the Detailed Project Page */
+        .project-header-img {
+            width: 100%;
+            max-height: 450px;
+            object-fit: cover;
+            border-radius: 12px;
+            margin-bottom: 30px;
+            border: 1px solid #ddd;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        .section-title {
+            color: #00369f;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 10px;
+            margin-top: 40px;
+            font-weight: bold;
+        }
+        .outcome-card {
+            background: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 5px solid #00369f;
+            margin-top: 20px;
+        }
+        .link-list {
+            list-style: none;
+            padding-left: 0;
+        }
+        .link-list li {
+            margin-bottom: 10px;
+        }
+        .btn-outcome {
+            margin-right: 10px;
+            margin-bottom: 5px;
+        }
+    </style>
+
+    <link rel='shortcut icon' href='img/favicon.ico' type='image/x-icon' />
+</head>
+
+<body>
+    <div class="container">
+        <div class="masthead">
+            <div class="row">
+                <div class="col-sm-9">
+                    <h2 class="muted"><b>Muhammad Ahsan,</b> PhD, Engr.</h2>
+                    <h5>Researcher in Advancing Structural Health Monitoring and Intelligent Fault Diagnosis</h5>
+                </div>
+                <div class="col-sm-3">
+                    <div style="text-align:center">
+                        <img src="img/AGH.png" height="190" alt="Politechnika" />
+                    </div>
+                </div>
+            </div>
+
+            <ul class="nav nav-justified">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="projects.html">Projects</a></li>
+            </ul>
+        </div>
+
+        <div class="row" style="margin-top: 30px;">
+            <div class="col-lg-12">
+                <img src="img/VPS2025.jpg" class="project-header-img" alt="Project Main Image">
+                <h1 style="color: #333;">Vehicle Engine Misfire Detection</h1>
+                <p class="lead" style="color: #666;">Developing robust diagnostic frameworks for internal combustion engines using advanced signal processing.</p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-8">
+                <h3 class="section-title">Description</h3>
+                <p style="text-align: justify; line-height: 1.6;">
+                    Insert a detailed description of your project here. You can explain the problem you are solving, 
+                    the methodology used (e.g., Deep Learning, Signal Processing), and the specific hardware 
+                    or software environments utilized during the research. 
+                </p>
+                <p style="text-align: justify; line-height: 1.6;">
+                    This section allows you to go deeper than the grid view on the main page, highlighting the 
+                    innovation and the technical challenges overcome.
+                </p>
+
+                <h3 class="section-title">Key Outcomes</h3>
+                <ul style="line-height: 1.8;">
+                    <li>Achieved 98% accuracy in real-time fault identification.</li>
+                    <li>Developed a novel feature extraction method for vibration signals.</li>
+                    <li>Successfully deployed on low-power embedded systems.</li>
+                </ul>
+            </div>
+
+            <div class="col-md-4">
+                <div class="outcome-card">
+                    <h4>Research Outputs</h4>
+                    <hr>
+                    
+                    <h5><b>Publications</b></h5>
+                    <ul class="link-list">
+                        <li><a href="#" target="_blank"><i class="glyphicon glyphicon-file"></i> IEEE Access Journal (2025)</a></li>
+                        <li><a href="#" target="_blank"><i class="glyphicon glyphicon-file"></i> Conference Paper (VPS)</a></li>
+                    </ul>
+
+                    <h5><b>Code & Data</b></h5>
+                    <ul class="link-list">
+                        <li><a href="https://github.com/your-repo" class="btn btn-default btn-sm btn-block" target="_blank">View GitHub Repository</a></li>
+                        <li><a href="#" class="btn btn-info btn-sm btn-block" target="_blank">Download Dataset</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div style="text-align:center; margin-top: 50px;">
+            <hr>
+            <p>© Muhammad Ahsan 2026.</p>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="dist/js/bootstrap.min.js"></script>
+</body>
+</html>
