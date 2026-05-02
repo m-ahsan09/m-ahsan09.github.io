@@ -39,16 +39,31 @@
     <link rel="stylesheet" media="all" href="cc_page_bottom.css">
 
     <style>
-        /* Ensure logo blocks display as a flexible grid */
+        /* Layout Fixes */
+        body {
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        .masthead {
+            margin-bottom: 0px !important; /* Removes gap between banner and nav */
+        }
+
+        .container, .row, .col-lg-2, .col-lg-10 {
+            position: static;
+        }
+
+        /* Profile Grid Alignment */
         .logobox__content {
             display: flex;
             flex-wrap: wrap;
             gap: 1.25rem;
             align-items: flex-start;
-            justify-content: center;
+            justify-content: center; /* FIXED: This centers the 7 items */
         }
 
-        /* Style each logo block as a card */
+        /* Profile Card Styling */
         .logo-block {
             text-align: center;
             background-color: #fff;
@@ -63,6 +78,11 @@
             padding: 10px;
             font-size: 18px;
             line-height: 1.2;
+        }
+
+        .logo-block:hover {
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+            transform: translateY(-2px);
         }
 
         .logo-block__image {
@@ -95,33 +115,9 @@
             font-weight: normal;
         }
 
-        .logo-block__title-link:hover {
-            text-decoration: underline;
-        }
-
         .logo-block__title-link span {
             font-size: 13px;
             display: inline-block;
-        }
-
-        /* Layout Overrides */
-        .container, .row, .col-sm-9, .col-sm-3, .col-lg-2, .col-lg-10 {
-            position: static;
-        }
-
-        body {
-            margin: 0;
-            padding: 0;
-            overflow-x: hidden;
-        }
-
-        /* Removed margin-bottom to ensure zero space between banner and nav */
-        .masthead {
-            margin-bottom: 0 !important;
-        }
-
-        .nav-justified {
-            margin-top: 0 !important;
         }
     </style>
 
