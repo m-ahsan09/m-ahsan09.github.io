@@ -1,219 +1,202 @@
 <!DOCTYPE html>
 <html lang="en">
-   <head>
-      <script>
-         (function(i, s, o, g, r, a, m) {
-             i['GoogleAnalyticsObject'] = r;
-             i[r] = i[r] || function() {
-                 (i[r].q = i[r].q || []).push(arguments)
-             }, i[r].l = 1 * new Date();
-             a = s.createElement(o),
-                 m = s.getElementsByTagName(o)[0];
-             a.async = 1;
-             a.src = g;
-             m.parentNode.insertBefore(a, m)
-         })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
-         
-         ga('create', 'UA-60795702-1', 'auto');
-         ga('send', 'pageview');
-         
-      </script>
-      <meta charset="utf-8">
-      <meta http-equiv="X-UA-Compatible" content="IE=edge">
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-      <meta name="description" content="">
-      <meta name="author" content="">
-      <title>Welcome to Dr. M. Ahsan's Home page</title>
-      <!-- Bootstrap core CSS -->
-      <link href="dist/css/bootstrap.min.css" rel="stylesheet">
-      <!-- Custom styles for this template -->
-      <link href="justified-nav.css" rel="stylesheet">
-	  
-	  <!-- ADDED: link to your banner styles -->
-	  <link href="cover.css" rel="stylesheet">
-	  
-	  <!-- ADDED: stylesheet for page bottom -->
-      <link rel="stylesheet" media="all" href="cc_page_bottom.css">
-      
-      <!-- ADDED: Small custom override to ensure logo blocks display properly without breaking layout -->
-      <style>
-	  /* Ensure logo blocks display as a flexible grid */
-	  .logobox__content {
-	  display: flex;
-	  flex-wrap: wrap;
-	  gap: 1.25rem;
-	  align-items: flex-start;
-	  }
-	  /* Style each logo block as a card */
-	  .logo-block {
-	  text-align: center;
-	  background-color: #fff;
-	  box-shadow: 0 3px 6px rgba(0,0,0,0.25);
-	  transition: 0.4s ease-out;
-	  overflow: hidden;
-	  border-radius: 5px;
-	  min-width: 130px;
-	  width: 130px; height: 210px;
-	  position: relative;
-	  padding: 10px;
-	  font-size: 18px;
-	  line-height: 1.2;
-	  }
-	  .logo-block__image {
-	  display: flex;
-	  align-items: center;
-	  justify-content: center;
-	  height: 120px;
-	  }
-	  .logo-block__image img {
-	  max-height: 100px; max-width: 100px;
-	  object-fit: contain;
-	  }
-	  .logo-block__copy {
-	  padding: 10px 0 0 0;
-	  text-align: center;
-	  }
-	  .logo-block__title {
-	  margin: 0;
-	  font-size: 1rem;
-	  line-height: 1.3;
-	  }
-	  .logo-block__title-link {
-	  text-decoration: none;
-	  color: #32333c;
-	  font-weight: normal;
-	  }
-	  .logo-block__title-link:hover {
-	  text-decoration: underline;
-	  }
-	  
-	  /* NEW RULE: Control the size of the text inside logo blocks */
-	  .logo-block__title-link span {
-	  font-size: 13px;  /* Adjust this value as needed */
-	  display: inline-block;
-	  }
-	  
-	  /* Override any unwanted global styles from external CSS that might affect layout */
-	  .container, .row, .col-sm-9, .col-sm-3, .col-lg-2, .col-lg-10 {
-	  position: static;
-	  }
-	  body {
-	  margin: 0; padding: 0; overflow-x: hidden;
-	  }
-	  /* Keep original header styles */
-	  .masthead {
-	  margin-bottom: 20px;
-	  }
-	  </style>
-      
-	  <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
-      <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
-      <script src="assets/js/ie-emulation-modes-warning.js"></script>
-      <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-      <script src="assets/js/ie10-viewport-bug-workaround.js"></script>
-      <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-      <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-      <![endif]-->
-      <link rel='shortcut icon' href='img/favicon.ico' type='image/x-icon' />
-   </head>
-   <body>
+
+<head>
+    <script>
+        (function(i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function() {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date();
+            a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-60795702-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Official Home Page of Muhammad Ahsan, PhD.">
+    <meta name="author" content="Muhammad Ahsan">
+    <title>Welcome to Dr. M. Ahsan's Home page</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="justified-nav.css" rel="stylesheet">
+    <!-- Link to banner styles -->
+    <link href="cover.css" rel="stylesheet">
+    <!-- Stylesheet for page bottom -->
+    <link rel="stylesheet" media="all" href="cc_page_bottom.css">
+
+    <style>
+        /* Layout Fixes */
+        body {
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        .masthead {
+            margin-bottom: 0px !important; /* Removes gap between banner and nav */
+        }
+
+        .container, .row, .col-lg-2, .col-lg-10 {
+            position: static;
+        }
+
+        /* Profile Grid Alignment */
+        .logobox__content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.25rem;
+            align-items: flex-start;
+            justify-content: center; /* FIXED: This centers the 7 items */
+        }
+
+        /* Profile Card Styling */
+        .logo-block {
+            text-align: center;
+            background-color: #fff;
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.25);
+            transition: 0.4s ease-out;
+            overflow: hidden;
+            border-radius: 5px;
+            min-width: 130px;
+            width: 130px;
+            height: 210px;
+            position: relative;
+            padding: 10px;
+            font-size: 18px;
+            line-height: 1.2;
+        }
+
+        .logo-block:hover {
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+            transform: translateY(-2px);
+        }
+
+        .logo-block__image {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 120px;
+        }
+
+        .logo-block__image img {
+            max-height: 100px;
+            max-width: 100px;
+            object-fit: contain;
+        }
+
+        .logo-block__copy {
+            padding: 10px 0 0 0;
+            text-align: center;
+        }
+
+        .logo-block__title {
+            margin: 0;
+            font-size: 1rem;
+            line-height: 1.3;
+        }
+
+        .logo-block__title-link {
+            text-decoration: none;
+            color: #32333c;
+            font-weight: normal;
+        }
+
+        .logo-block__title-link span {
+            font-size: 13px;
+            display: inline-block;
+        }
+    </style>
+
+    <script src="assets/js/ie-emulation-modes-warning.js"></script>
+    <script src="assets/js/ie10-viewport-bug-workaround.js"></script>
+    <link rel='shortcut icon' href='img/favicon.ico' type='image/x-icon' />
+</head>
+
+<body>
     <div class="container">
-    <!-- Banner Section -->
-    <div class="masthead">
-        <div class="row">
-            <div class="col-sm-8 text-overlay">
-                <h2 class="muted"><b>Muhammad AHSAN</b> Dr.-Engr.</h2>
-                <h5>Researcher in Advancing Structural Health Monitoring and Intelligent Fault Diagnosis</h5>
+        <!-- Banner Section -->
+        <div class="masthead">
+            <div class="row">
+                <div class="col-sm-8 text-overlay">
+                    <h2 class="muted"><b>Muhammad AHSAN,</b> PhD, Engr.</h2>
+                    <h5>Researcher in Advancing Structural Health Monitoring and Intelligent Fault Diagnosis</h5>
+                </div>
             </div>
         </div>
+
+        <!-- Navigation Section -->
+        <ul class="nav nav-justified">
+            <li class="active"><a href="index.html">Home</a></li>
+            <li><a href="publications.html">Publications</a></li>
+            <li><a href="projects.html">Projects</a></li>
+        </ul>
     </div>
 
-    <!-- Navigation Section -->
-    <ul class="nav nav-justified">
-        <li class="active"><a href="index.html">Home</a></li>
-        <li><a href="publications.html">Publications</a></li>
-        <li><a href="projects.html">Projects</a></li>
-    </ul>
-	</div>
-         <!-- 
-            -->
-         <div class="container theme-showcase" style="padding-top:20px">
-            <div class="inner">
-               <div class="row">
-                  <div class="col-lg-2" >
-                     <div class="" style="text-align:center;">
+    <div class="container theme-showcase" style="padding-top:20px">
+        <div class="inner">
+            <div class="row">
+                <div class="col-lg-2">
+                    <div style="text-align:center;">
                         <img src="img/Ahsan.jpg" width="180" alt="My photo" class="rounded-circle" />
-                     </div>
-                  </div>
-                  <div class="col-lg-10">
-                     <div class="">
+                    </div>
+                </div>
+                <div class="col-lg-10">
+                    <div>
                         <h2 style="text-align:left">Short Biography</h2>
                         <p style="text-align:justify;">
-						   Dr. Muhammad Ahsan received his Bachelor’s degree in Electrical Engineering from <a href="https://au.edu.pk/"> Air University</a>, Islamabad, Pakistan, in 2014, and his Master's degree in Control Theory and Control Engineering from <a href="https://www.njust.edu.cn/"> Nanjing University of Science and Technology</a>, Nanjing, China, in 2020. He completed his Ph.D. in July 2025 from <a href="https://www.polsl.pl/"> Silesian University of Technology</a>, Gliwice, Poland, where he conducted multidisciplinary research bridging signal processing, machine learning, and control engineering.
+                            Dr. Muhammad Ahsan received his Bachelor’s degree in Electrical Engineering from <a href="https://au.edu.pk/"> Air University</a>, Islamabad, Pakistan, in 2014, and his Master's degree in Control Theory and Control Engineering from <a href="https://www.njust.edu.cn/"> Nanjing University of Science and Technology</a>, Nanjing, China, in 2020. He completed his Ph.D. in July 2025 from <a href="https://www.polsl.pl/"> Silesian University of Technology</a>, Gliwice, Poland, where he conducted multidisciplinary research bridging signal processing, machine learning, and control engineering.
 						   <!-- In October 2025, Dr. Ahsan joined <a href="https://www.agh.edu.pl/"> AGH University of Science and Technology</a>, Kraków, Poland, as an Assistant Professor of Research at the Department of Robotics and Mechatronics, Faculty of Mechanical Engineering and Robotics. His research focuses on developing advanced methodologies for machine health diagnosis and intelligent control systems by integrating digital signal processing, artificial intelligence, and nonlinear control techniques. -->
 						   Dr. Ahsan has authored over 20 publications in reputed journals and conferences, contributing to the advancement of fault diagnosis in bearings, machine health monitoring, and control system design. The aim of Dr. Ahsan's research is to enhance the reliability, safety, and efficiency of industrial systems, with a particular emphasis on optimization, nonlinear control, and robust multidisciplinary approaches. Through his work, Dr. Ahsan continues to push the boundaries of knowledge, making significant contributions to both academia and industry. 
                         </p>
-                     </div>
-                  </div>
-               </div>
-               <div class="row">
-                  <h2>Research Interests</h2>
-                  <p> I'm mainly interested in the Vibration Analysis and Health Monitoring; Signal Processing and Machine Learning; Nonlinear and Distributed Control.</p>
-                  <!-- ul>
-                     <li>Information Retrieval.</li> 
-                     <li>Biomedical NLP.</li>                             
-                     <li>Social Network Analysis.</li> 
-                     <li>Recommender Systems.</li> 
-                     </ul-->
-                  <!--ul>
-                     <li>I successfully completed the <a href="https://www.coursera.org/course/mmds"> Mining Massive Datasets</a> courses on the <a href="https://www.coursera.org/"> Coursera</a> platform. <a href="statements/Coursera_mmds_2014.pdf"> [view statement]</a></li>
-                     
-                     <li>I successfully completed the <a href="https://www.coursera.org/course/recsys"> Introduction to Recommender Systems</a> courses on the <a href="https://www.coursera.org/">Coursera</a> platform. <a href="https://www.coursera.org/maestro/api/certificate/get_certificate?verify-code=33KHMXMP8U">[view statement]</a></li>
-                     
-                     <li>I successfully completed the <a href="https://www.coursera.org/course/bigdata"> Web Intelligence and Big Data</a> courses on the <a href="https://www.coursera.org/">Coursera</a> platform. <a href="statements/Coursera_bigdata_2013.pdf">[view statement]</a></li>
-                     
-                     
-                     <li>I successfully completed the <a href="https://www.coursera.org/course/ml"> Machine Learning</a> courses on the <a href="https://www.coursera.org/">Coursera</a> platform. <a href="statements/get_certificate.pdf">[view statement]</a></li>
-                     </ul-->
-               </div>
-               <div class="row">
-                  <h2>News & Announcements</h2>
-                  <ul>
-                     <!-- li>[September, 2025]: From October 1st, 2025, I will join AGH University of Science and Technology in Krakow as an Assistant Professor of Research.</li -->
-                     <li>[July, 2025]: I successfully defended my doctoral dissertation and granted Doctoral title in the field: Engineering and Technical Sciences and discipline: Automation, Electronics, Electrical Engineering and Space Technologies.</li> 
-                     <li>[July, 2025]: I will defend my doctoral dissertation on "Vehicle diagnostic using artificial intelligence and digital signal processing methods" on July 9th 2025 at Faculty of Automatic Control, Electronics and Informatics, ul. Akademickie j 16 w Gliwicach.</li>
-                     <li>[July, 2025]: Our paper, Enhanced LeNet-5-LSTM-Based Diagnosis of PMSM Stator Faults Using Vibration Signals Across Different Fault Severities, has been accepted for presentation at the 2025 IEEE Conference on Power Electronics and Renewable Energy (CPERE). </li>
-					 <li>[April, 2025]: Our paper, Bearing Fault Diagnosis in Induction Motors Using Low-Cost Triaxial ADXL355 Accelerometer and a Hybrid CWT-DCNN-LSTM Model, has been accepted for publication in IEEE Access..</li>
-                     <li>[October, 2024]: Our paper, Enhanced Fault Diagnosis in Rotating Machinery Using a Hybrid CWT-LeNet-5-LSTM Model: Performance Across Various Load Conditions, has been accepted for publication in IEEE Access..</li>
-                     <li>[August, 2024]: Our paper, Comparison of ANN and CNN Models for Misfire Detection in a Vehicle Engine at Different RPMs Using a Low-Cost ADXL1002 Accelerometer, has been accepted for presentation at the IEEE SPA 2024 Conference. </li>
-                  </ul>
-               </div>
+                    </div>
+                </div>
+            </div>
 
-               <div class="row">
-                  <div class="col-sm-6">
-                     <h2>Contact Information</h2>
-                     <ul>
-                        <!-- li><b>Position:</b> Assistant Professor</li -->
-                        <!-- li><b>Department:</b> Department of Robotics and Mechatronics</li -->
-                        <!-- li><b>Faculty:</b> Faculty of Mechanical Engineering and Robotics</li -->
-                        <!-- li><b>Campus:</b> AGH-UST in Krakow</li -->
-                        <!-- li><b>Office:</b> 3.18</li -->
-                        <!-- li><b>Tel:</b> +48 729 650 154</li -->
+            <div class="row">
+                <h2>Research Interests</h2>
+                <p> Vibration Analysis and Health Monitoring; Signal Processing and Machine Learning; Nonlinear and Distributed Control.</p>
+            </div>
+
+            <div class="row">
+                <h2>News & Announcements</h2>
+                <ul>
+                    <li>[July, 2025]: I successfully defended my doctoral dissertation and granted Doctoral title in the field: Engineering and Technical Sciences.</li>
+                    <li>[April, 2025]: Our paper, Bearing Fault Diagnosis in Induction Motors, has been accepted for publication in IEEE Access.</li>
+                    <li>[October, 2024]: Our paper, Enhanced Fault Diagnosis in Rotating Machinery, has been accepted for publication in IEEE Access.</li>
+                </ul>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-6">
+                    <h2>Contact Information</h2>
+                    <ul>
                         <li><b>Email:</b> AhsanMuhammad@aol.com </li>
-                     </ul>
-                  </div>
-                  <div class="col-sm-6" style="text-align:right">
-                     <a class="twitter-timeline" data-width="500" data-height="250" href="">Tweets</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-                  </div>
-               </div>
-               <div class="row">
-                  <h2>Disclaimer</h2>
-                  This is a personal website. The opinions expressed are mine and do not necessarily represent the views of my employer.
-               </div>
-               <hr>
-			   <!-- Profile Links Section - Centered -->
+                    </ul>
+                </div>
+                <div class="col-sm-6" style="text-align:right">
+                    <a class="twitter-timeline" data-width="500" data-height="250" href="">Tweets</a>
+                    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                </div>
+            </div>
+
+            <div class="row">
+                <h2>Disclaimer</h2>
+                This is a personal website. The opinions expressed are mine and do not necessarily represent the views of my employer.
+            </div>
+
+            <hr>
+
+            <!-- Profile Links Section - Centered -->
             <div class="wp-block-uis-logobox logobox">
                 <div class="logobox__content">
                     <div class="wp-block-uis-logo logo-block">
