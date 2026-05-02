@@ -1,0 +1,40 @@
+.masthead {
+    /* Uses the new image as a full-width background */
+    background: url('img/cover.png') no-repeat center right;
+    background-size: cover;
+    min-height: 330px; /* Adjust this to control how much of the image is shown */
+    display: flex;
+    align-items: center;
+    color: #333; 
+    padding: 60px 0;
+    border-bottom: 1px solid #eee;
+	
+	/* REMOVE SPACE BELOW */
+    margin-bottom: 0 !important; 
+    padding-bottom: 0;
+}
+
+.nav-justified {
+    /* REMOVE SPACE ABOVE */
+    margin-top: 0 !important;
+}
+
+.text-overlay {
+    /* Adds spacing to keep your name away from the very edge of the screen */
+    padding-left: 60px;
+    background: rgba(255, 255, 255, 0.2); /* Subtle highlight for text readability */
+    border-radius: 8px;
+}
+
+.text-overlay h2 {
+    font-size: 2.8rem;
+    margin-bottom: 5px;
+    color: #222;
+}
+
+.text-overlay h5 {
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: #555;
+    max-width: 600px; /* Prevents text from stretching into the right-side graphics */
+}
