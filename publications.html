@@ -33,6 +33,80 @@
     <!-- Custom styles for this template -->
     <link href="justified-nav.css" rel="stylesheet">
 
+	<!-- ADDED: stylesheet for page bottom -->
+      <link rel="stylesheet" media="all" href="cc_page_bottom.css">
+      
+      <!-- ADDED: Small custom override to ensure logo blocks display properly without breaking layout -->
+      <style>
+	  /* Ensure logo blocks display as a flexible grid */
+	  .logobox__content {
+	  display: flex;
+	  flex-wrap: wrap;
+	  gap: 1.25rem;
+	  align-items: flex-start;
+	  }
+	  /* Style each logo block as a card */
+	  .logo-block {
+	  text-align: center;
+	  background-color: #fff;
+	  box-shadow: 0 3px 6px rgba(0,0,0,0.25);
+	  transition: 0.4s ease-out;
+	  overflow: hidden;
+	  border-radius: 5px;
+	  min-width: 130px;
+	  width: 130px; height: 210px;
+	  position: relative;
+	  padding: 10px;
+	  font-size: 18px;
+	  line-height: 1.2;
+	  }
+	  .logo-block__image {
+	  display: flex;
+	  align-items: center;
+	  justify-content: center;
+	  height: 120px;
+	  }
+	  .logo-block__image img {
+	  max-height: 100px; max-width: 100px;
+	  object-fit: contain;
+	  }
+	  .logo-block__copy {
+	  padding: 10px 0 0 0;
+	  text-align: center;
+	  }
+	  .logo-block__title {
+	  margin: 0;
+	  font-size: 1rem;
+	  line-height: 1.3;
+	  }
+	  .logo-block__title-link {
+	  text-decoration: none;
+	  color: #32333c;
+	  font-weight: normal;
+	  }
+	  .logo-block__title-link:hover {
+	  text-decoration: underline;
+	  }
+	  
+	  /* NEW RULE: Control the size of the text inside logo blocks */
+	  .logo-block__title-link span {
+	  font-size: 13px;  /* Adjust this value as needed */
+	  display: inline-block;
+	  }
+	  
+	  /* Override any unwanted global styles from external CSS that might affect layout */
+	  .container, .row, .col-sm-9, .col-sm-3, .col-lg-2, .col-lg-10 {
+	  position: static;
+	  }
+	  body {
+	  margin: 0; padding: 0; overflow-x: hidden;
+	  }
+	  /* Keep original header styles */
+	  .masthead {
+	  margin-bottom: 20px;
+	  }
+	  </style>
+
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
     <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
     <script src="assets/js/ie-emulation-modes-warning.js"></script>
@@ -169,6 +243,101 @@
         </div>
         <div style="text-align:center;">
             <hr>
+			<hr>
+			   <!-- Associated Industries Section - properly styled using the external CSS file -->
+			   <div class="wp-block-uis-logobox logobox">
+                  <div class="logobox__content">
+                     
+                     <div class="wp-block-uis-logo logo-block logo-block--narrow">
+                        <div class="logo-block__image">
+                           <a href="https://scholar.google.com/citations?user=yQN2u24AAAAJ&hl=en/" target="_blank">
+                              <img src="./img/google_scholar.png" alt="Google Scholar">
+                           </a>
+                        </div>
+                        <div class="logo-block__copy">
+                           <p class="logo-block__title"><a class="logo-block__title-link" target="_blank" href="https://scholar.google.com/citations?user=yQN2u24AAAAJ&hl=en/"><span>GoogleScholar</span></a></p>
+                        </div>
+                     </div>
+                     
+                     <div class="wp-block-uis-logo logo-block logo-block--narrow">
+                        <div class="logo-block__image">
+                           <a href="https://orcid.org/0000-0003-2362-3297/" target="_blank">
+                              <img src="./img/orcid.png" alt="ORCID">
+                           </a>
+                        </div>
+                        <div class="logo-block__copy">
+                           <p class="logo-block__title"><a class="logo-block__title-link" target="_blank" href="https://orcid.org/0000-0003-2362-3297/"><span>ORCiD</span></a></p>
+                        </div>
+                     </div>
+                     
+                     <div class="wp-block-uis-logo logo-block logo-block--narrow">
+                        <div class="logo-block__image">
+                           <a href="https://www.scopus.com/authid/detail.uri?authorId=57543617600" target="_blank">
+                              <img src="./img/scopus.png" alt="Scopus">
+                           </a>
+                        </div>
+                        <div class="logo-block__copy">
+                           <p class="logo-block__title"><a class="logo-block__title-link" target="_blank" href="https://www.scopus.com/authid/detail.uri?authorId=57543617600"><span>Scopus</span></a></p>
+                        </div>
+                     </div>
+                     
+                     <div class="wp-block-uis-logo logo-block logo-block--narrow">
+                        <div class="logo-block__image">
+                           <a href="https://www.webofscience.com/wos/author/record/PMW-5367-2026" target="_blank">
+                              <img src="./img/WoS.png" alt="Web of Science">
+                           </a>
+                        </div>
+                        <div class="logo-block__copy">
+                           <p class="logo-block__title"><a class="logo-block__title-link" target="_blank" href="https://www.webofscience.com/wos/author/record/PMW-5367-2026"><span>WoS</span></a></p>
+                        </div>
+                     </div>
+                     
+                     <div class="wp-block-uis-logo logo-block logo-block--narrow">
+                        <div class="logo-block__image">
+                           <a href="https://www.researchgate.net/profile/Muhammad-Ahsan-81" target="_blank">
+                              <img src="./img/RG.png" alt="ResearchGate">
+                           </a>
+                        </div>
+                        <div class="logo-block__copy">
+                           <p class="logo-block__title"><a class="logo-block__title-link" target="_blank" href="https://www.researchgate.net/profile/Muhammad-Ahsan-81"><span>ResearchGate</span></a></p>
+                        </div>
+                     </div>
+                     
+                     <div class="wp-block-uis-logo logo-block logo-block--narrow">
+                        <div class="logo-block__image">
+                           <a href="https://sciprofiles.com/profile/2508315" target="_blank">
+                              <img src="./img/SciProfile.png" alt="SciProfiles">
+                           </a>
+                        </div>
+                        <div class="logo-block__copy">
+                           <p class="logo-block__title"><a class="logo-block__title-link" target="_blank" href="https://sciprofiles.com/profile/2508315"><span>SciProfiles</span></a></p>
+                        </div>
+                     </div>
+                     
+                     <div class="wp-block-uis-logo logo-block logo-block--narrow">
+                        <div class="logo-block__image">
+                           <a href="https://github.com/m-ahsan09" target="_blank">
+                              <img src="./img/GitHub.png" alt="GitHub">
+                           </a>
+                        </div>
+                        <div class="logo-block__copy">
+                           <p class="logo-block__title"><a class="logo-block__title-link" target="_blank" href="https://github.com/m-ahsan09"><span>GitHub</span></a></p>
+                        </div>
+                     </div>
+					 
+					 <div class="wp-block-uis-logo logo-block logo-block--narrow">
+                        <div class="logo-block__image">
+                           <a href="https://github.com/m-ahsan09" target="_blank">
+                              <img src="./img/GitHub.png" alt="GitHub">
+                           </a>
+                        </div>
+                        <div class="logo-block__copy">
+                           <p class="logo-block__title"><a class="logo-block__title-link" target="_blank" href="https://github.com/m-ahsan09"><span>GitHub</span></a></p>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+			
             <!--div class="footer"-->
             © Muhammad Ahsan 2025.
         </div>
