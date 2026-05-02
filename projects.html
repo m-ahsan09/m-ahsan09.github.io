@@ -39,15 +39,31 @@
     <link rel="stylesheet" media="all" href="cc_page_bottom.css">
 
     <style>
-        /* Profile Link Grid Styles */
+        /* Layout Fixes */
+        body {
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        .masthead {
+            margin-bottom: 0px !important; /* Removes gap between banner and nav */
+        }
+
+        .container, .row, .col-lg-2, .col-lg-10 {
+            position: static;
+        }
+
+        /* Profile Grid Alignment */
         .logobox__content {
             display: flex;
             flex-wrap: wrap;
             gap: 1.25rem;
             align-items: flex-start;
-            justify-content: center;
+            justify-content: center; /* FIXED: This centers the 7 items */
         }
 
+        /* Profile Card Styling */
         .logo-block {
             text-align: center;
             background-color: #fff;
@@ -62,6 +78,11 @@
             padding: 10px;
             font-size: 18px;
             line-height: 1.2;
+        }
+
+        .logo-block:hover {
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+            transform: translateY(-2px);
         }
 
         .logo-block__image {
@@ -98,60 +119,8 @@
             font-size: 13px;
             display: inline-block;
         }
-
-        /* Layout Overrides */
-        .container, .row, .col-sm-9, .col-sm-3, .col-lg-12 {
-            position: static;
-        }
-
-        body {
-            margin: 0;
-            padding: 0;
-            overflow-x: hidden;
-        }
-
-        .masthead {
-            margin-bottom: 0 !important;
-        }
-
-        .nav-justified {
-            margin-top: 0 !important;
-        }
-
-        /* Custom styles for the Project Grid */
-        .project-item {
-            margin-bottom: 30px;
-            text-align: center;
-        }
-
-        .project-item img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            border-radius: 8px;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            border: 1px solid #ddd;
-        }
-
-        .project-item img:hover {
-            transform: scale(1.05);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-        }
-
-        .project-title {
-            margin-top: 15px;
-            font-weight: bold;
-            color: #00369f;
-            text-decoration: none;
-            display: block;
-            min-height: 50px;
-        }
-
-        .project-title:hover {
-            text-decoration: underline;
-        }
     </style>
-
+    
     <link rel='shortcut icon' href='img/favicon.ico' type='image/x-icon' />
 </head>
 
