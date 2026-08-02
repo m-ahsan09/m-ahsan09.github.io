@@ -1,327 +1,408 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <script>
-        (function(i, s, o, g, r, a, m) {
-            i['GoogleAnalyticsObject'] = r;
-            i[r] = i[r] || function() {
-                (i[r].q = i[r].q || []).push(arguments)
-            }, i[r].l = 1 * new Date();
-            a = s.createElement(o),
-                m = s.getElementsByTagName(o)[0];
-            a.async = 1;
-            a.src = g;
-            m.parentNode.insertBefore(a, m)
-        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Publications | Dr. Muhammad Ahsan</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+  :root{
+    --navy:#1a2332; --navy-light:#232f45; --teal:#0d9488; --blue:#2563eb;
+    --bg:#f8f9fa; --text:#2d3748; --muted:#64748b; --white:#ffffff; --border:#e2e8f0;
+    --shadow: 0 4px 20px rgba(26,35,50,0.08); --shadow-hover: 0 12px 30px rgba(26,35,50,0.14);
+    --radius: 14px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{font-family:'Inter',sans-serif;color:var(--text);background:var(--bg);line-height:1.65;}
+  h1,h2,h3,h4{font-family:'Poppins',sans-serif;color:var(--navy);}
+  a{text-decoration:none;color:inherit;}
+  ul{list-style:none;}
+  .container{max-width:1000px;margin:0 auto;padding:0 24px;}
 
-        ga('create', 'UA-60795702-1', 'auto');
-        ga('send', 'pageview');
-    </script>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Publications of Muhammad Ahsan, PhD in Structural Health Monitoring and Intelligent Fault Diagnosis.">
-    <meta name="author" content="Muhammad Ahsan">
+  header{
+    background:var(--navy);position:sticky;top:0;z-index:1000;
+    box-shadow:0 2px 12px rgba(0,0,0,0.15);
+  }
+  nav{display:flex;align-items:center;justify-content:space-between;max-width:1140px;margin:0 auto;padding:16px 24px;}
+  .logo{font-family:'Poppins',sans-serif;font-weight:700;color:var(--white);font-size:1.15rem;}
+  .logo span{color:var(--teal);}
+  .nav-links{display:flex;gap:28px;}
+  .nav-links a{color:rgba(255,255,255,0.85);font-size:0.9rem;font-weight:500;transition:color 0.25s;}
+  .nav-links a:hover, .nav-links a.active{color:var(--teal);}
+  .back-home{
+    display:inline-flex;align-items:center;gap:8px;font-size:0.85rem;font-weight:600;
+    color:#5eead4;background:rgba(13,148,136,0.15);padding:8px 16px;border-radius:20px;
+  }
+  @media(max-width:700px){.nav-links{display:none;}}
 
-    <title>M. Ahsan's Publications</title>
+  .page-hero{
+    background:linear-gradient(160deg, var(--navy) 0%, #0f1622 100%);
+    padding:70px 0 50px;text-align:center;position:relative;overflow:hidden;
+  }
+  .page-hero::before{
+    content:'';position:absolute;inset:0;
+    background:radial-gradient(circle at 20% 30%, rgba(13,148,136,0.2), transparent 45%),
+               radial-gradient(circle at 80% 70%, rgba(37,99,235,0.2), transparent 45%);
+  }
+  .page-hero h1{color:#fff;font-size:2.4rem;font-weight:700;position:relative;}
+  .page-hero p{color:#cbd5e1;margin-top:12px;max-width:560px;margin-left:auto;margin-right:auto;position:relative;}
+  .stats-row{display:flex;justify-content:center;gap:40px;margin-top:30px;position:relative;flex-wrap:wrap;}
+  .stat{text-align:center;}
+  .stat .num{font-family:'Poppins',sans-serif;font-size:1.9rem;font-weight:700;color:#5eead4;}
+  .stat .label{font-size:0.78rem;color:#94a3b8;text-transform:uppercase;letter-spacing:1px;}
 
-    <!-- Bootstrap core CSS -->
-    <link href="dist/css/bootstrap.min.css" rel="stylesheet">
+  main{padding:60px 0 100px;}
+  .cat-block{margin-bottom:56px;}
+  .cat-title{
+    display:flex;align-items:center;gap:12px;font-size:1.3rem;margin-bottom:6px;
+  }
+  .cat-title i{color:var(--teal);}
+  .cat-sub{color:var(--muted);font-size:0.9rem;margin-bottom:24px;}
 
-    <!-- Custom styles for this template -->
-    <link href="justified-nav.css" rel="stylesheet">
+  .pub-card{
+    background:var(--white);border-radius:var(--radius);padding:22px 26px;margin-bottom:16px;
+    box-shadow:var(--shadow);border:1px solid var(--border);border-left:4px solid var(--teal);
+    transition:transform 0.2s, box-shadow 0.2s;
+  }
+  .pub-card:hover{transform:translateX(3px);box-shadow:var(--shadow-hover);}
+  .pub-card.conf{border-left-color:var(--blue);}
+  .pub-card.other{border-left-color:#a855f7;}
+  .pub-card.thesis{border-left-color:#f59e0b;}
+  .pub-num{font-size:0.75rem;font-weight:700;color:var(--muted);}
+  .pub-title{font-family:'Poppins',sans-serif;font-weight:600;font-size:1rem;margin:4px 0 6px;}
+  .pub-authors{font-size:0.85rem;color:var(--muted);font-style:italic;margin-bottom:4px;}
+  .pub-meta{font-size:0.87rem;color:var(--text);margin-bottom:10px;}
+  .pub-link{
+    font-size:0.82rem;font-weight:600;color:var(--teal);display:inline-flex;align-items:center;gap:6px;
+  }
+  .pub-link:hover{text-decoration:underline;}
 
-    <!-- Banner and Navigation Alignment Styles -->
-    <link href="cover.css" rel="stylesheet">
+  .filter-bar{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-bottom:50px;}
+  .filter-btn{
+    padding:9px 20px;border-radius:30px;border:1.5px solid var(--border);background:var(--white);
+    font-weight:600;font-size:0.85rem;cursor:pointer;color:var(--muted);transition:all 0.2s;
+  }
+  .filter-btn.active{background:var(--navy);border-color:var(--navy);color:#fff;}
+  .cat-block.hidden{display:none;}
 
-    <!-- Stylesheet for page bottom -->
-    <link rel="stylesheet" media="all" href="cc_page_bottom.css">
-
-    <style>
-        /* Layout Fixes */
-        body {
-            margin: 0;
-            padding: 0;
-            overflow-x: hidden;
-        }
-
-        .masthead {
-            margin-bottom: 0px !important; /* Removes gap between banner and nav */
-        }
-
-        .container, .row, .col-lg-2, .col-lg-10 {
-            position: static;
-        }
-
-        /* Profile Grid Alignment */
-        .logobox__content {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1.25rem;
-            align-items: flex-start;
-            justify-content: center; /* FIXED: This centers the 7 items */
-        }
-
-        /* Profile Card Styling */
-        .logo-block {
-            text-align: center;
-            background-color: #fff;
-            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.25);
-            transition: 0.4s ease-out;
-            overflow: hidden;
-            border-radius: 5px;
-            min-width: 130px;
-            width: 130px;
-            height: 210px;
-            position: relative;
-            padding: 10px;
-            font-size: 18px;
-            line-height: 1.2;
-        }
-
-        .logo-block:hover {
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
-            transform: translateY(-2px);
-        }
-
-        .logo-block__image {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 120px;
-        }
-
-        .logo-block__image img {
-            max-height: 100px;
-            max-width: 100px;
-            object-fit: contain;
-        }
-
-        .logo-block__copy {
-            padding: 10px 0 0 0;
-            text-align: center;
-        }
-
-        .logo-block__title {
-            margin: 0;
-            font-size: 1rem;
-            line-height: 1.3;
-        }
-
-        .logo-block__title-link {
-            text-decoration: none;
-            color: #32333c;
-            font-weight: normal;
-        }
-
-        .logo-block__title-link span {
-            font-size: 13px;
-            display: inline-block;
-        }
-    </style>
-
-    <script src="assets/js/ie-emulation-modes-warning.js"></script>
-    <script src="assets/js/ie10-viewport-bug-workaround.js"></script>
-
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-    <link rel='shortcut icon' href='img/favicon.ico' type='image/x-icon' />
+  footer{background:var(--navy);color:rgba(255,255,255,0.7);padding:30px 0;text-align:center;font-size:0.85rem;}
+  footer a{color:#5eead4;}
+</style>
 </head>
-
 <body>
-    <div class="container">
-        <!-- Banner Section -->
-        <div class="masthead">
-            <div class="row">
-                <div class="col-sm-8 text-overlay">
-                    <h2 class="muted"><b>Muhammad AHSAN</b> Dr.-Engr.</h2>
-                    <h5>Researcher in Advancing Structural Health Monitoring and Intelligent Fault Diagnosis</h5>
-                </div>
-            </div>
-        </div>
 
-        <!-- Navigation Section -->
-        <ul class="nav nav-justified">
-            <li><a href="index.html">Home</a></li>
-            <li class="active"><a href="publications.html">Publications</a></li>
-            <li><a href="projects.html">Projects</a></li>
-        </ul>
+<header>
+  <nav>
+    <a href="index.html" class="logo">M. <span>Ahsan</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="publications.html" class="active">Publications</a></li>
+      <li><a href="projects.html">Projects</a></li>
+    </ul>
+    <a href="index.html" class="back-home"><i class="fa-solid fa-arrow-left"></i> Back to Portfolio</a>
+  </nav>
+</header>
 
-        <!-- Jumbotron / Content Section -->
-        <div class="jumbotron" style="text-align:justify; margin-top: 20px;">
-            <div class="row">
-                <h2 style="padding-left: 15px;">Peer Reviewed Research Work</h2>
-                <h3 style="padding-left: 15px;">A. Condition Monitoring and Fault Diagnosis</h3>
-            </div>
+<section class="page-hero">
+  <div class="container">
+    <h1>Complete Publication List</h1>
+    <p>Peer-reviewed journal articles, conference papers, collaborative works, and theses.</p>
+    <div class="stats-row">
+      <div class="stat"><div class="num">10</div><div class="label">CM &amp; Fault Diagnosis</div></div>
+      <div class="stat"><div class="num">4</div><div class="label">Control &amp; MAS</div></div>
+      <div class="stat"><div class="num">6</div><div class="label">Conference Papers</div></div>
+      <div class="stat"><div class="num">10</div><div class="label">Collaborative Works</div></div>
+    </div>
+  </div>
+</section>
 
-            <div>
-                <ol reversed>
-                    <li>Muhammad Ahsan, & Phong Ba Dao. (2026). <b>Title: Multi-Channel SCADA-Based Image-Driven Power Prediction for Wind Turbines using Optimized LeNet-5-LSTM Hybrid Neural Architecture.</b> Journal: Energies, Vol. 19(5), pp: 1 – 29. DOI: https://doi.org/10.3390/en19051169 <a href="https://doi.org/10.3390/en19051169">[Paper]</a></li>
-                    <li>Muhammad Ahsan, Jose Rodriguez & Mohamed Abdelrahem. (2025). <b>Title: Bearing Fault Diagnosis in Induction Motors using Low-Cost Triaxial ADXL335 Accelerometer and a Hybrid CWT-DCNN-LSTM Model.</b> Journal: IEEE Access, Vol. 13, pp. 101037 – 101050. DOI: https://doi.org/10.1109/ACCESS.2025.3577672 <a href="https://doi.org/10.1109/ACCESS.2025.3577672">[Paper]</a></li>
-                    <li>Muhammad Ahsan, Muhammad Waqar Hassan, Jose Rodriguez & Mohamed Abdelrahem. (2025). <b>Title: Enhanced Fault Diagnosis in Rotating Machinery using a Hybrid CWT-LeNet-5-LSTM Model: Performance Across Various Load Conditions.</b> Journal: IEEE Access, Vol. 13, pp. 1026 – 1045. DOI: https://doi.org/10.1109/ACCESS.2024.3522948 <a href="https://doi.org/10.1109/ACCESS.2024.3522948">[Paper]</a></li>
-                    <li>Muhammad Ahsan, Dariusz Bismor & Pawel Fabis. (2025). <b>Title: Application of low-cost ADXL1002 accelerometer for vehicle engine misfire detection using a novel hybrid EMD-based image processing and DCNN-LSTM model.</b> Journal: Vibrations in Physical Systems, Vol. 36(1), pp. 1 –7. DOI: https://doi.org/10.21008/j.0860-6897.2025.1.02 <a href="https://doi.org/10.21008/j.0860-6897.2025.1.02">[Paper]</a></li>
-                    <li>M. Fawad, et al. (2025). <b>Title: Integration of Bridge Health Monitoring System With Augmented Reality Application Developed Using 3D Game Engine–Case Study.</b> Journal: IEEE Access, Vol. 12, pp. 16963 – 16974. DOI: https://doi.org/10.1109/ACCESS.2024.3358843 <a href="https://doi.org/10.1109/ACCESS.2024.3358843">[Paper]</a></li>
-                    <li>Muhammad Ahsan, Dariusz Bismor, & Pawel Fabis. (2024). <b>Title: Analysis of the Vehicle Engine Misfires using Frequency-Domain Approaches at Various RPMs with ADXL1002 Accelerometer.</b> Journal: Archives of Acoustics, Vol. 49(4), pp. 507 – 516. DOI: https://doi.org/10.24425/aoa.2024.148813 <a href="https://doi.org/10.24425/aoa.2024.148813">[Paper]</a></li>
-                    <li>Muhammad Ahsan, & Mostafa M. Salah. (2023). <b>Title: Efficient DCNN-LSTM Model for Fault Diagnosis of Raw Vibration Signals: Applications to Variable Speed Rotating Machines and Diverse Fault Depths Datasets.</b> Journal: Symmetry, Vol. 15(7), pp: 1 – 22. DOI: https://doi.org/10.3390/sym15071413 <a href="https://doi.org/10.3390/sym15071413">[Paper]</a></li>
-                    <li>Muhammad Ahsan, & Mostafa M. Salah. (2023). <b>Title: Similarity index of the STFT-based health diagnosis of variable speed rotating machines.</b> Journal: Intelligent Systems with Applications, Vol. 20, pp: 1 – 9. DOI: https://doi.org/10.1016/j.iswa.2023.200270 <a href="https://doi.org/10.1016/j.iswa.2023.200270">[Paper]</a></li>
-                    <li>Muhammad Ahsan, Dariusz Bismor, & Muhammad Arslan Manzoor. (2023). <b>Title: ARL-Wavelet-BPF Optimization using PSO Algorithm for Bearing Fault Diagnosis.</b> Journal: Archives of Control Sciences, Vol. 33(LXIX), pp: 589 – 606. DOI: 10.24425/acs.2023.146961 <a href="https://doi.org/10.24425/acs.2023.146961">[Paper]</a></li>
-                    <li>Muhammad Ahsan, & Dariusz Bismor. (2022). <b>Title: Early-Stage Fault Diagnosis for Rotating Element Bearing using Improved Harmony Search Algorithm with Different Fitness Functions.</b> Journal: IEEE Transactions on Instrumentation and Measurement, Vol. 71, pp: 1 – 9. DOI: 10.1109/TIM.2022.3192254 <a href="https://doi.org/10.1109/TIM.2022.3192254">[Paper]</a></li>
-                </ol>
-            </div>
+<main class="container">
 
-            <div class="row">
-                <h3 style="padding-left: 15px;">B. Control Engineering and Multi-Agent Systems</h3>
-            </div>
+  <div class="filter-bar">
+    <button class="filter-btn active" data-filter="all">All</button>
+    <button class="filter-btn" data-filter="cmfd">Condition Monitoring &amp; Fault Diagnosis</button>
+    <button class="filter-btn" data-filter="control">Control &amp; Multi-Agent Systems</button>
+    <button class="filter-btn" data-filter="conf">Conference Papers</button>
+    <button class="filter-btn" data-filter="other">Collaborative Works</button>
+    <button class="filter-btn" data-filter="thesis">Theses</button>
+  </div>
 
-            <div>
-                <ol reversed>
-                    <li>Muhammad Ahsan & Mostafa M. Salah. (2024). <b>Title: Improved nonlinear model predictive control with inequality constraints using particle filtering for nonlinear and highly coupled dynamical systems.</b> Journal: Nonlinear Engineering, Vol. 13(1), pp. 20220351. DOI: https://doi.org/10.1515/nleng-2022-0351 <a href="https://doi.org/10.1515/nleng-2022-0351">[Paper]</a></li>
-                    <li>Muhammad Ahsan, Mostafa M. Salah, & Ahmed Saeed (2023). <b>Title: Adaptive Fast-Terminal Neuro-Sliding Mode Control for Robot Manipulators with Unknown Dynamics and Disturbances.</b> Journal: Electronics, Vol. 12(18), pp: 3856. DOI: https://doi.org/10.3390/electronics12183856 <a href="https://doi.org/10.3390/electronics12183856">[Paper]</a></li>
-                    <li>Muhammad Ahsan, J. Rodriguez, & M. Abdelrahem. (2023). <b>Title: Distributed Control Algorithm for DC Microgrid using Higher-Order Multi-Agent System.</b> Journal: Sustainability, Vol. 15(10), pp: 1 – 20. DOI: https://doi.org/10.3390/su15108336 <a href="https://doi.org/10.3390/su15108336">[Paper]</a></li>
-                    <li>Muhammad Ahsan & Theyab R. Alsenani. (2023). <b>Title: Distributed Consensus Control for Voltage Tracking and Current Distribution in DC Microgrid.</b> Journal: Ain Shams Engineering Journal, Vol. 14(12), pp: 1 – 9. DOI: https://doi.org/10.1016/j.asej.2023.102363 <a href="https://doi.org/10.1016/j.asej.2023.102363">[Paper]</a></li>
-                </ol>
-            </div>
+  <!-- A. Condition Monitoring and Fault Diagnosis -->
+  <div class="cat-block" data-cat="cmfd">
+    <h2 class="cat-title"><i class="fa-solid fa-gauge-high"></i> A. Condition Monitoring and Fault Diagnosis</h2>
+    <p class="cat-sub">10 journal articles</p>
 
-            <div class="row">
-                <h3 style="padding-left: 15px;">C. Conference Papers</h3>
-            </div>
+    <div class="pub-card"><span class="pub-num">10.</span>
+      <div class="pub-title">Multi-Channel SCADA-Based Image-Driven Power Prediction for Wind Turbines using Optimized LeNet-5-LSTM Hybrid Neural Architecture</div>
+      <div class="pub-authors">Muhammad Ahsan &amp; Phong Ba Dao (2026)</div>
+      <div class="pub-meta">Energies, Vol. 19(5), pp. 1–29</div>
+      <a class="pub-link" href="https://doi.org/10.3390/en19051169" target="_blank" rel="noopener"><i class="fa-solid fa-link"></i> doi.org/10.3390/en19051169</a>
+    </div>
 
-            <div>
-                <ol reversed>
-                    <li>Mohamed Abdelrahem, Muhammad Ahsan & Jose Rodriguez. (September 2025). <b>Title: Enhanced LeNet-5-LSTM-Based Diagnosis of PMSM Stator Faults using Vibration Signals Across Different Fault Severities.</b> Conference: IEEE CPERE 2025, Pyramisa Island Aswan, Egypt, (Accepted)</li>
-                    <li>Muhammad Ahsan, Dariusz Bismor & Pawel Fabis. (September 2024). <b>Title: Comparison of ANN and CNN models for misfire detection in vehicle engine at different RPMs with low-cost ADXL1002 accelerometer.</b> Conference: IEEE 2024 Signal Processing: Algorithms, Architectures, Arrangements, and Applications (SPA), Poznan, Poland, pp: 60 – 65. DOI: https://doi.org/10.23919/SPA61993.2024.10715607 <a href="https://doi.org/10.23919/SPA61993.2024.10715607">[Paper]</a></li>
-                    <li>Muhammad Ahsan & Dariusz Bismor. (September 2023). <b>Title: Advanced Fault Diagnosis in Rotating Machines using 2D Grayscale Images with Improved Deep Convolutional Neural Networks.</b> Conference: IEEE 2023 Signal Processing: Algorithms, Architectures, Arrangements, and Applications (SPA), Poznan, Poland, pp: 77 – 82. DOI: https://doi.org/10.23919/SPA59660.2023.10274428 <a href="https://doi.org/10.23919/SPA59660.2023.10274428">[Paper]</a></li>
-                    <li>Muhammad Ahsan & Dariusz Bismor. (June 2023). <b>Title: Calibration of a High Sampling Frequency MEMS-Based Vibration Measurement System.</b> Conference: XXI Polish Control Conference (PCC2023), Gliwice, Poland, Vol. 708, pp: 294 – 302. DOI: https://doi.org/10.1007/978-3-031-35170-9_28 <a href="https://doi.org/10.1007/978-3-031-35170-9_28">[Paper]</a></li>
-                    <li>Muhammad Ahsan & Dariusz Bismor. (April 2022). <b>Title: Early-Stage Faults Detection Using Harmony Search Algorithm and STFT-Based Spectral Kurtosis.</b> Conference: Automation 2022: New Solutions and Technologies for Automation, Robotics and Measurement Techniques, Warsaw, Poland, Vol. 1427, pp. 75 – 84. DOI: https://doi.org/10.1007/978-3-031-03502-9_8 <a href="https://doi.org/10.1007/978-3-031-03502-9_8">[Paper]</a></li>
-                    <li>Muhammad Ahsan & Qian Ma. (2019). <b>Bipartite Containment Control of Multi-Agent Systems.</b> 2019 IEEE/ASME International Conference on Advanced Intelligent Mechatronics, Hong Kong, China, 2019: 895 – 900. DOI: https://doi.org/10.1109/AIM.2019.8868456 <a href="https://doi.org/10.1109/AIM.2019.8868456">[Paper]</a></li>
-                </ol>
-            </div>
+    <div class="pub-card"><span class="pub-num">9.</span>
+      <div class="pub-title">Bearing Fault Diagnosis in Induction Motors using Low-Cost Triaxial ADXL335 Accelerometer and a Hybrid CWT-DCNN-LSTM Model</div>
+      <div class="pub-authors">Muhammad Ahsan, Jose Rodriguez &amp; Mohamed Abdelrahem (2025)</div>
+      <div class="pub-meta">IEEE Access, Vol. 13, pp. 101037–101050</div>
+      <a class="pub-link" href="https://doi.org/10.1109/ACCESS.2025.3577672" target="_blank" rel="noopener"><i class="fa-solid fa-link"></i> doi.org/10.1109/ACCESS.2025.3577672</a>
+    </div>
 
-            <div class="row">
-                <h3 style="padding-left: 15px;">D. Other Collaborative Publications</h3>
-            </div>
+    <div class="pub-card"><span class="pub-num">8.</span>
+      <div class="pub-title">Enhanced Fault Diagnosis in Rotating Machinery using a Hybrid CWT-LeNet-5-LSTM Model: Performance Across Various Load Conditions</div>
+      <div class="pub-authors">Muhammad Ahsan, Muhammad Waqar Hassan, Jose Rodriguez &amp; Mohamed Abdelrahem (2025)</div>
+      <div class="pub-meta">IEEE Access, Vol. 13, pp. 1026–1045</div>
+      <a class="pub-link" href="https://doi.org/10.1109/ACCESS.2024.3522948" target="_blank" rel="noopener"><i class="fa-solid fa-link"></i> doi.org/10.1109/ACCESS.2024.3522948</a>
+    </div>
 
-            <div>
-                <ol reversed>
-                    <li>Liao, K.F. Fawy, H. Mohamed, M. Ahsan, B.S. Abdullaeva, D.M. Tasan Cruz & M. Kamal. (2025). <b>Title: Dynamic characteristics analysis of graphene-reinforced annular sandwich composite plates: A combined generalized differential quadrature and artificial neural networks approaches.</b> Journal: Steel and Composite Structures, Vol. 55(2), pp: 127 – 142. DOI: https://doi.org/10.12989/scs.2025.55.2.127 <a href="https://doi.org/10.12989/scs.2025.55.2.127">[Paper]</a></li>
-                    <li>Tahani I. Al-Muhimeed, Yasmine Elogail, Ahmed Shaker, Muhammad Ahsan, Gamal A. Ebrahim, & Mostafa M. Salah. (2025). <b>Title: Simulation-guided design of ETL-Free and HTL-Free all-polymer solar cells: Front and back work function engineering.</b> Journal: Results in Engineering, Vol. 27, pp: 106779. DOI: https://doi.org/10.1016/j.rineng.2025.106779 <a href="https://doi.org/10.1016/j.rineng.2025.106779">[Paper]</a></li>
-                    <li>B. Rezini, et al. (2025). <b>Title: Exploring the Optoelectronic Properties and Solar Cell Performance of Cs2SnI6−xBrx Lead-Free Double Perovskites: Combined DFT and SCAPS Simulation.</b> Journal: Physics, Vol. 7(1): 3, pp: 1 – 20. DOI: https://doi.org/10.3390/physics7010003 <a href="https://doi.org/10.3390/physics7010003">[Paper]</a></li>
-                    <li>Cheng Zhu, et. al,. (2024). <b>Title: Buckling and dynamic behavior of uniform and tapered woven carbon/jute fiber reinforced polyester hybrid composite beams.</b> Journal: Mechanics of Advanced Materials and Structures, Vol. 31(22), pp. 5425 – 5436. DOI: https://doi.org/10.1080/15376494.2023.2215837 <a href="https://doi.org/10.1080/15376494.2023.2215837">[Paper]</a></li>
-                    <li>H. Hosseinalizadeh, Q.M. Hussain, Z. Poshtchaman, M. Ahsan, A.H. Amin, S. Naghavi, & M.K. Mahabady. (2024). <b>Title: Emerging insights into keratin 7 roles in tumor progression and metastasis of cancers.</b> Journal: Front. Oncology, Vol. 13, pp: 1243871. DOI: 10.3389/fonc.2023.1243871 <a href="https://doi.org/10.3389/fonc.2023.1243871">[Paper]</a></li>
-                    <li>M. Reza Hasrul, M. Junaedy Rahman, A.R.A. Putra Helmy, A. Yoke Cheng, & M. Ahsan. (2023). <b>Title: Exploring Research Trends and Themes in Intelligent Transportation Systems in the Last 10 Years (2014 – 2023).</b> Journal: Int. J. of Environment, Engineering and Education, Vol. 5(3), pp: 141 – 153. DOI: https://doi.org/10.55151/ijeedu.v5i3.90 <a href="https://doi.org/10.55151/ijeedu.v5i3.90">[Paper]</a></li>
-                    <li>Umar Islam, Abdullah Al-Atawi, Hathal S. Alwageed, Muhammad Ahsan, Fuad A. Awwad, & M. R. Abonazel (2023). <b>Title: Real-Time Detection Schemes for Memory DoS (M-DoS) Attacks on Cloud Computing Applications.</b> Journal: IEEE Access, Vol. 11, pp: 74641 -- 74656. DOI: https://doi.org/10.1109/ACCESS.2023.3290910 <a href="https://doi.org/10.1109/ACCESS.2023.3290910">[Paper]</a></li>
-                    <li>Feng Xu, Zhongshuai Liu, Rajeshkumar Selvaraj, Muhammad Ahsan. (2023). <b>Title: Bending and eigenfrequency analysis of glass fiber reinforced honeycomb sandwich shell panels containing graphene-decorated with graphene quantum dots.</b> Journal: Engineering Structures, Vol. 294, pp: 1 – 14. DOI: https://doi.org/10.1016/j.engstruct.2023.116685 <a href="https://doi.org/10.1016/j.engstruct.2023.116685">[Paper]</a></li>
-                    <li>Tahani I. Al-Muhimeed, Shareefah Alahmari, Muhammad Ahsan, & Mostafa M. Salah (2023). <b>Title: An Investigation of the Inverted Structure of a PBDB:T/PZT:C1-Based Polymer Solar Cell.</b> Journal: Polymers, Vol. 15(24), pp: 4623. DOI: https://doi.org/10.3390/polym15244623 <a href="https://doi.org/10.3390/polym15244623">[Paper]</a></li>
-                    <li>A. Singh, at. al. (2023). <b>Title: Synthesis of Transition-Metal-Doped Nanocatalysts with Antibacterial Capabilities Using a Complementary Green Method.</b> Journal: Molecules, Vol. 28(10), pp: 1 – 14. DOI: https://doi.org/10.3390/molecules28104182 <a href="https://doi.org/10.3390/molecules28104182">[Paper]</a></li>
-                </ol>
-            </div>
+    <div class="pub-card"><span class="pub-num">7.</span>
+      <div class="pub-title">Application of Low-Cost ADXL1002 Accelerometer for Vehicle Engine Misfire Detection using a Novel Hybrid EMD-Based Image Processing and DCNN-LSTM Model</div>
+      <div class="pub-authors">Muhammad Ahsan, Dariusz Bismor &amp; Pawel Fabis (2025)</div>
+      <div class="pub-meta">Vibrations in Physical Systems, Vol. 36(1), pp. 1–7</div>
+      <a class="pub-link" href="https://doi.org/10.21008/j.0860-6897.2025.1.02" target="_blank" rel="noopener"><i class="fa-solid fa-link"></i> doi.org/10.21008/j.0860-6897.2025.1.02</a>
+    </div>
 
-            <div class="row">
-                <h2 style="padding-left: 15px;">Thesis</h2>
-            </div>
-            <div>
-                <ol reversed>
-                    <li>Muhammad Ahsan.<b> Vehicle Diagnostics using Artificial Intelligence and Digital Signal Processing Methods</b>. Doctoral Dissertation. Department of Measurements and Control Systems, Silesian University of Technology, Gliwice, Poland. July 2025. <a href="https://repolis.bg.polsl.pl/dlibra/publication/90344/edition/80858/content">[pdf]</a>[cite: 1]</li>
-                    <li>Muhammad Ahsan.<b> Containment Control Problem for Multi-Agent Systems</b>. M.Sc thesis. School of Automation, Nanjing University of Science and Technology, Nanjing, China. June 2020.</li>
-                </ol>
-            </div>
-        </div>
+    <div class="pub-card"><span class="pub-num">6.</span>
+      <div class="pub-title">Integration of Bridge Health Monitoring System With Augmented Reality Application Developed Using 3D Game Engine – Case Study</div>
+      <div class="pub-authors">M. Fawad, et al. (2025)</div>
+      <div class="pub-meta">IEEE Access, Vol. 12, pp. 16963–16974</div>
+      <a class="pub-link" href="https://doi.org/10.1109/ACCESS.2024.3358843" target="_blank" rel="noopener"><i class="fa-solid fa-link"></i> doi.org/10.1109/ACCESS.2024.3358843</a>
+    </div>
 
-        <div style="text-align:center;">
-            <hr>
-            <div class="wp-block-uis-logobox logobox">
-                <div class="logobox__content">
-                    <div class="wp-block-uis-logo logo-block logo-block--narrow">
-                        <div class="logo-block__image">
-                            <a href="https://scholar.google.com/citations?user=yQN2u24AAAAJ&hl=en/" target="_blank">
-                                <img src="./img/google_scholar.png" alt="Google Scholar">
-                            </a>
-                        </div>
-                        <div class="logo-block__copy">
-                            <p class="logo-block__title"><a class="logo-block__title-link" target="_blank" href="https://scholar.google.com/citations?user=yQN2u24AAAAJ&hl=en/"><span>GoogleScholar</span></a></p>
-                        </div>
-                    </div>
+    <div class="pub-card"><span class="pub-num">5.</span>
+      <div class="pub-title">Analysis of the Vehicle Engine Misfires using Frequency-Domain Approaches at Various RPMs with ADXL1002 Accelerometer</div>
+      <div class="pub-authors">Muhammad Ahsan, Dariusz Bismor &amp; Pawel Fabis (2024)</div>
+      <div class="pub-meta">Archives of Acoustics, Vol. 49(4), pp. 507–516</div>
+      <a class="pub-link" href="https://doi.org/10.24425/aoa.2024.148813" target="_blank" rel="noopener"><i class="fa-solid fa-link"></i> doi.org/10.24425/aoa.2024.148813</a>
+    </div>
 
-                    <div class="wp-block-uis-logo logo-block logo-block--narrow">
-                        <div class="logo-block__image">
-                            <a href="https://orcid.org/0000-0003-2362-3297/" target="_blank">
-                                <img src="./img/orcid.png" alt="ORCID">
-                            </a>
-                        </div>
-                        <div class="logo-block__copy">
-                            <p class="logo-block__title"><a class="logo-block__title-link" target="_blank" href="https://orcid.org/0000-0003-2362-3297/"><span>ORCiD</span></a></p>
-                        </div>
-                    </div>
+    <div class="pub-card"><span class="pub-num">4.</span>
+      <div class="pub-title">Efficient DCNN-LSTM Model for Fault Diagnosis of Raw Vibration Signals: Applications to Variable Speed Rotating Machines and Diverse Fault Depths Datasets</div>
+      <div class="pub-authors">Muhammad Ahsan &amp; Mostafa M. Salah (2023)</div>
+      <div class="pub-meta">Symmetry, Vol. 15(7), pp. 1–22</div>
+      <a class="pub-link" href="https://doi.org/10.3390/sym15071413" target="_blank" rel="noopener"><i class="fa-solid fa-link"></i> doi.org/10.3390/sym15071413</a>
+    </div>
 
-                    <div class="wp-block-uis-logo logo-block logo-block--narrow">
-                        <div class="logo-block__image">
-                            <a href="https://www.scopus.com/authid/detail.uri?authorId=57543617600" target="_blank">
-                                <img src="./img/scopus.png" alt="Scopus">
-                            </a>
-                        </div>
-                        <div class="logo-block__copy">
-                            <p class="logo-block__title"><a class="logo-block__title-link" target="_blank" href="https://www.scopus.com/authid/detail.uri?authorId=57543617600"><span>Scopus</span></a></p>
-                        </div>
-                    </div>
+    <div class="pub-card"><span class="pub-num">3.</span>
+      <div class="pub-title">Similarity Index of the STFT-Based Health Diagnosis of Variable Speed Rotating Machines</div>
+      <div class="pub-authors">Muhammad Ahsan &amp; Mostafa M. Salah (2023)</div>
+      <div class="pub-meta">Intelligent Systems with Applications, Vol. 20, pp. 1–9</div>
+      <a class="pub-link" href="https://doi.org/10.1016/j.iswa.2023.200270" target="_blank" rel="noopener"><i class="fa-solid fa-link"></i> doi.org/10.1016/j.iswa.2023.200270</a>
+    </div>
 
-                    <div class="wp-block-uis-logo logo-block logo-block--narrow">
-                        <div class="logo-block__image">
-                            <a href="https://www.webofscience.com/wos/author/record/PMW-5367-2026" target="_blank">
-                                <img src="./img/WoS.png" alt="Web of Science">
-                            </a>
-                        </div>
-                        <div class="logo-block__copy">
-                            <p class="logo-block__title"><a class="logo-block__title-link" target="_blank" href="https://www.webofscience.com/wos/author/record/PMW-5367-2026"><span>WoS</span></a></p>
-                        </div>
-                    </div>
+    <div class="pub-card"><span class="pub-num">2.</span>
+      <div class="pub-title">ARL-Wavelet-BPF Optimization using PSO Algorithm for Bearing Fault Diagnosis</div>
+      <div class="pub-authors">Muhammad Ahsan, Dariusz Bismor &amp; Muhammad Arslan Manzoor (2023)</div>
+      <div class="pub-meta">Archives of Control Sciences, Vol. 33(LXIX), pp. 589–606</div>
+      <a class="pub-link" href="https://doi.org/10.24425/acs.2023.146961" target="_blank" rel="noopener"><i class="fa-solid fa-link"></i> doi.org/10.24425/acs.2023.146961</a>
+    </div>
 
-                    <div class="wp-block-uis-logo logo-block logo-block--narrow">
-                        <div class="logo-block__image">
-                            <a href="https://www.researchgate.net/profile/Muhammad-Ahsan-81" target="_blank">
-                                <img src="./img/RG.png" alt="ResearchGate">
-                            </a>
-                        </div>
-                        <div class="logo-block__copy">
-                            <p class="logo-block__title"><a class="logo-block__title-link" target="_blank" href="https://www.researchgate.net/profile/Muhammad-Ahsan-81"><span>ResearchGate</span></a></p>
-                        </div>
-                    </div>
+    <div class="pub-card"><span class="pub-num">1.</span>
+      <div class="pub-title">Early-Stage Fault Diagnosis for Rotating Element Bearing using Improved Harmony Search Algorithm with Different Fitness Functions</div>
+      <div class="pub-authors">Muhammad Ahsan &amp; Dariusz Bismor (2022)</div>
+      <div class="pub-meta">IEEE Transactions on Instrumentation and Measurement, Vol. 71, pp. 1–9</div>
+      <a class="pub-link" href="https://doi.org/10.1109/TIM.2022.3192254" target="_blank" rel="noopener"><i class="fa-solid fa-link"></i> doi.org/10.1109/TIM.2022.3192254</a>
+    </div>
+  </div>
 
-                    <div class="wp-block-uis-logo logo-block logo-block--narrow">
-                        <div class="logo-block__image">
-                            <a href="https://sciprofiles.com/profile/2508315" target="_blank">
-                                <img src="./img/SciProfile.png" alt="SciProfiles">
-                            </a>
-                        </div>
-                        <div class="logo-block__copy">
-                            <p class="logo-block__title"><a class="logo-block__title-link" target="_blank" href="https://sciprofiles.com/profile/2508315"><span>SciProfiles</span></a></p>
-                        </div>
-                    </div>
+  <!-- B. Control Engineering and Multi-Agent Systems -->
+  <div class="cat-block" data-cat="control">
+    <h2 class="cat-title"><i class="fa-solid fa-diagram-project"></i> B. Control Engineering and Multi-Agent Systems</h2>
+    <p class="cat-sub">4 journal articles</p>
 
-                    <div class="wp-block-uis-logo logo-block logo-block--narrow">
-                        <div class="logo-block__image">
-                            <a href="https://github.com/m-ahsan09" target="_blank">
-                                <img src="./img/GitHub.png" alt="GitHub">
-                            </a>
-                        </div>
-                        <div class="logo-block__copy">
-                            <p class="logo-block__title"><a class="logo-block__title-link" target="_blank" href="https://github.com/m-ahsan09"><span>GitHub</span></a></p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+    <div class="pub-card"><span class="pub-num">4.</span>
+      <div class="pub-title">Improved Nonlinear Model Predictive Control with Inequality Constraints using Particle Filtering for Nonlinear and Highly Coupled Dynamical Systems</div>
+      <div class="pub-authors">Muhammad Ahsan &amp; Mostafa M. Salah (2024)</div>
+      <div class="pub-meta">Nonlinear Engineering, Vol. 13(1), pp. 20220351</div>
+      <a class="pub-link" href="https://doi.org/10.1515/nleng-2022-0351" target="_blank" rel="noopener"><i class="fa-solid fa-link"></i> doi.org/10.1515/nleng-2022-0351</a>
+    </div>
 
-        <div style="text-align:center;">
-            <hr>
-            © Muhammad Ahsan 2025.
-        </div>
-    </div> <!-- /container -->
+    <div class="pub-card"><span class="pub-num">3.</span>
+      <div class="pub-title">Adaptive Fast-Terminal Neuro-Sliding Mode Control for Robot Manipulators with Unknown Dynamics and Disturbances</div>
+      <div class="pub-authors">Muhammad Ahsan, Mostafa M. Salah &amp; Ahmed Saeed (2023)</div>
+      <div class="pub-meta">Electronics, Vol. 12(18), pp. 3856</div>
+      <a class="pub-link" href="https://doi.org/10.3390/electronics12183856" target="_blank" rel="noopener"><i class="fa-solid fa-link"></i> doi.org/10.3390/electronics12183856</a>
+    </div>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <script src="dist/js/bootstrap.min.js"></script>
+    <div class="pub-card"><span class="pub-num">2.</span>
+      <div class="pub-title">Distributed Control Algorithm for DC Microgrid using Higher-Order Multi-Agent System</div>
+      <div class="pub-authors">Muhammad Ahsan, J. Rodriguez &amp; M. Abdelrahem (2023)</div>
+      <div class="pub-meta">Sustainability, Vol. 15(10), pp. 1–20</div>
+      <a class="pub-link" href="https://doi.org/10.3390/su15108336" target="_blank" rel="noopener"><i class="fa-solid fa-link"></i> doi.org/10.3390/su15108336</a>
+    </div>
+
+    <div class="pub-card"><span class="pub-num">1.</span>
+      <div class="pub-title">Distributed Consensus Control for Voltage Tracking and Current Distribution in DC Microgrid</div>
+      <div class="pub-authors">Muhammad Ahsan &amp; Theyab R. Alsenani (2023)</div>
+      <div class="pub-meta">Ain Shams Engineering Journal, Vol. 14(12), pp. 1–9</div>
+      <a class="pub-link" href="https://doi.org/10.1016/j.asej.2023.102363" target="_blank" rel="noopener"><i class="fa-solid fa-link"></i> doi.org/10.1016/j.asej.2023.102363</a>
+    </div>
+  </div>
+
+  <!-- C. Conference Papers -->
+  <div class="cat-block" data-cat="conf">
+    <h2 class="cat-title"><i class="fa-solid fa-people-arrows"></i> C. Conference Papers</h2>
+    <p class="cat-sub">6 papers</p>
+
+    <div class="pub-card conf"><span class="pub-num">6.</span>
+      <div class="pub-title">Enhanced LeNet-5-LSTM-Based Diagnosis of PMSM Stator Faults using Vibration Signals Across Different Fault Severities</div>
+      <div class="pub-authors">Mohamed Abdelrahem, Muhammad Ahsan &amp; Jose Rodriguez (Sep 2025)</div>
+      <div class="pub-meta">IEEE CPERE 2025, Pyramisa Island Aswan, Egypt</div>
+      <a class="pub-link" href="https://doi.org/10.1109/CPERE65146.2025.11240075" target="_blank" rel="noopener"><i class="fa-solid fa-link"></i> doi.org/10.1109/CPERE65146.2025.11240075</a>
+    </div>
+
+    <div class="pub-card conf"><span class="pub-num">5.</span>
+      <div class="pub-title">Comparison of ANN and CNN Models for Misfire Detection in Vehicle Engine at Different RPMs with Low-Cost ADXL1002 Accelerometer</div>
+      <div class="pub-authors">Muhammad Ahsan, Dariusz Bismor &amp; Pawel Fabis (Sep 2024)</div>
+      <div class="pub-meta">IEEE Signal Processing: Algorithms, Architectures, Arrangements and Applications (SPA) 2024, Poznań, Poland, pp. 60–65</div>
+      <a class="pub-link" href="https://doi.org/10.23919/SPA61993.2024.10715607" target="_blank" rel="noopener"><i class="fa-solid fa-link"></i> doi.org/10.23919/SPA61993.2024.10715607</a>
+    </div>
+
+    <div class="pub-card conf"><span class="pub-num">4.</span>
+      <div class="pub-title">Advanced Fault Diagnosis in Rotating Machines using 2D Grayscale Images with Improved Deep Convolutional Neural Networks</div>
+      <div class="pub-authors">Muhammad Ahsan &amp; Dariusz Bismor (Sep 2023)</div>
+      <div class="pub-meta">IEEE SPA 2023, Poznań, Poland, pp. 77–82</div>
+      <a class="pub-link" href="https://doi.org/10.23919/SPA59660.2023.10274428" target="_blank" rel="noopener"><i class="fa-solid fa-link"></i> doi.org/10.23919/SPA59660.2023.10274428</a>
+    </div>
+
+    <div class="pub-card conf"><span class="pub-num">3.</span>
+      <div class="pub-title">Calibration of a High Sampling Frequency MEMS-Based Vibration Measurement System</div>
+      <div class="pub-authors">Muhammad Ahsan &amp; Dariusz Bismor (Jun 2023)</div>
+      <div class="pub-meta">XXI Polish Control Conference (PCC2023), Gliwice, Poland, Vol. 708, pp. 294–302</div>
+      <a class="pub-link" href="https://doi.org/10.1007/978-3-031-35170-9_28" target="_blank" rel="noopener"><i class="fa-solid fa-link"></i> doi.org/10.1007/978-3-031-35170-9_28</a>
+    </div>
+
+    <div class="pub-card conf"><span class="pub-num">2.</span>
+      <div class="pub-title">Early-Stage Faults Detection using Harmony Search Algorithm and STFT-Based Spectral Kurtosis</div>
+      <div class="pub-authors">Muhammad Ahsan &amp; Dariusz Bismor (Apr 2022)</div>
+      <div class="pub-meta">Automation 2022: New Solutions and Technologies for Automation, Robotics and Measurement Techniques, Warsaw, Poland, Vol. 1427, pp. 75–84</div>
+      <a class="pub-link" href="https://doi.org/10.1007/978-3-031-03502-9_8" target="_blank" rel="noopener"><i class="fa-solid fa-link"></i> doi.org/10.1007/978-3-031-03502-9_8</a>
+    </div>
+
+    <div class="pub-card conf"><span class="pub-num">1.</span>
+      <div class="pub-title">Bipartite Containment Control of Multi-Agent Systems</div>
+      <div class="pub-authors">Muhammad Ahsan &amp; Qian Ma (2019)</div>
+      <div class="pub-meta">IEEE/ASME International Conference on Advanced Intelligent Mechatronics (AIM), Hong Kong, China, pp. 895–900</div>
+      <a class="pub-link" href="https://doi.org/10.1109/AIM.2019.8868456" target="_blank" rel="noopener"><i class="fa-solid fa-link"></i> doi.org/10.1109/AIM.2019.8868456</a>
+    </div>
+  </div>
+
+  <!-- D. Other Collaborative Publications -->
+  <div class="cat-block" data-cat="other">
+    <h2 class="cat-title"><i class="fa-solid fa-people-group"></i> D. Other Collaborative Publications</h2>
+    <p class="cat-sub">10 co-authored journal articles across multidisciplinary fields</p>
+
+    <div class="pub-card other"><span class="pub-num">10.</span>
+      <div class="pub-title">Dynamic Characteristics Analysis of Graphene-Reinforced Annular Sandwich Composite Plates: A Combined Generalized Differential Quadrature and Artificial Neural Networks Approaches</div>
+      <div class="pub-authors">Liao, K.F. Fawy, H. Mohamed, M. Ahsan, et al. (2025)</div>
+      <div class="pub-meta">Steel and Composite Structures, Vol. 55(2), pp. 127–142</div>
+      <a class="pub-link" href="https://doi.org/10.12989/scs.2025.55.2.127" target="_blank" rel="noopener"><i class="fa-solid fa-link"></i> doi.org/10.12989/scs.2025.55.2.127</a>
+    </div>
+
+    <div class="pub-card other"><span class="pub-num">9.</span>
+      <div class="pub-title">Simulation-Guided Design of ETL-Free and HTL-Free All-Polymer Solar Cells: Front and Back Work Function Engineering</div>
+      <div class="pub-authors">Tahani I. Al-Muhimeed, Yasmine Elogail, Ahmed Shaker, Muhammad Ahsan, et al. (2025)</div>
+      <div class="pub-meta">Results in Engineering, Vol. 27, pp. 106779</div>
+      <a class="pub-link" href="https://doi.org/10.1016/j.rineng.2025.106779" target="_blank" rel="noopener"><i class="fa-solid fa-link"></i> doi.org/10.1016/j.rineng.2025.106779</a>
+    </div>
+
+    <div class="pub-card other"><span class="pub-num">8.</span>
+      <div class="pub-title">Exploring the Optoelectronic Properties and Solar Cell Performance of Cs2SnI6−xBrx Lead-Free Double Perovskites: Combined DFT and SCAPS Simulation</div>
+      <div class="pub-authors">B. Rezini, et al. (2025)</div>
+      <div class="pub-meta">Physics, Vol. 7(1), pp. 1–20</div>
+      <a class="pub-link" href="https://doi.org/10.3390/physics7010003" target="_blank" rel="noopener"><i class="fa-solid fa-link"></i> doi.org/10.3390/physics7010003</a>
+    </div>
+
+    <div class="pub-card other"><span class="pub-num">7.</span>
+      <div class="pub-title">Buckling and Dynamic Behavior of Uniform and Tapered Woven Carbon/Jute Fiber Reinforced Polyester Hybrid Composite Beams</div>
+      <div class="pub-authors">Cheng Zhu, et al. (2024)</div>
+      <div class="pub-meta">Mechanics of Advanced Materials and Structures, Vol. 31(22), pp. 5425–5436</div>
+      <a class="pub-link" href="https://doi.org/10.1080/15376494.2023.2215837" target="_blank" rel="noopener"><i class="fa-solid fa-link"></i> doi.org/10.1080/15376494.2023.2215837</a>
+    </div>
+
+    <div class="pub-card other"><span class="pub-num">6.</span>
+      <div class="pub-title">Emerging Insights into Keratin 7 Roles in Tumor Progression and Metastasis of Cancers</div>
+      <div class="pub-authors">H. Hosseinalizadeh, Q.M. Hussain, Z. Poshtchaman, M. Ahsan, et al. (2024)</div>
+      <div class="pub-meta">Frontiers in Oncology, Vol. 13, pp. 1243871</div>
+      <a class="pub-link" href="https://doi.org/10.3389/fonc.2023.1243871" target="_blank" rel="noopener"><i class="fa-solid fa-link"></i> doi.org/10.3389/fonc.2023.1243871</a>
+    </div>
+
+    <div class="pub-card other"><span class="pub-num">5.</span>
+      <div class="pub-title">Exploring Research Trends and Themes in Intelligent Transportation Systems in the Last 10 Years (2014–2023)</div>
+      <div class="pub-authors">M. Reza Hasrul, M. Junaedy Rahman, A.R.A. Putra Helmy, A. Yoke Cheng &amp; M. Ahsan (2023)</div>
+      <div class="pub-meta">Int. J. of Environment, Engineering and Education, Vol. 5(3), pp. 141–153</div>
+      <a class="pub-link" href="https://doi.org/10.55151/ijeedu.v5i3.90" target="_blank" rel="noopener"><i class="fa-solid fa-link"></i> doi.org/10.55151/ijeedu.v5i3.90</a>
+    </div>
+
+    <div class="pub-card other"><span class="pub-num">4.</span>
+      <div class="pub-title">Real-Time Detection Schemes for Memory DoS (M-DoS) Attacks on Cloud Computing Applications</div>
+      <div class="pub-authors">Umar Islam, Abdullah Al-Atawi, Hathal S. Alwageed, Muhammad Ahsan, et al. (2023)</div>
+      <div class="pub-meta">IEEE Access, Vol. 11, pp. 74641–74656</div>
+      <a class="pub-link" href="https://doi.org/10.1109/ACCESS.2023.3290910" target="_blank" rel="noopener"><i class="fa-solid fa-link"></i> doi.org/10.1109/ACCESS.2023.3290910</a>
+    </div>
+
+    <div class="pub-card other"><span class="pub-num">3.</span>
+      <div class="pub-title">Bending and Eigenfrequency Analysis of Glass Fiber Reinforced Honeycomb Sandwich Shell Panels Containing Graphene-Decorated with Graphene Quantum Dots</div>
+      <div class="pub-authors">Feng Xu, Zhongshuai Liu, Rajeshkumar Selvaraj &amp; Muhammad Ahsan (2023)</div>
+      <div class="pub-meta">Engineering Structures, Vol. 294, pp. 1–14</div>
+      <a class="pub-link" href="https://doi.org/10.1016/j.engstruct.2023.116685" target="_blank" rel="noopener"><i class="fa-solid fa-link"></i> doi.org/10.1016/j.engstruct.2023.116685</a>
+    </div>
+
+    <div class="pub-card other"><span class="pub-num">2.</span>
+      <div class="pub-title">An Investigation of the Inverted Structure of a PBDB:T/PZT:C1-Based Polymer Solar Cell</div>
+      <div class="pub-authors">Tahani I. Al-Muhimeed, Shareefah Alahmari, Muhammad Ahsan &amp; Mostafa M. Salah (2023)</div>
+      <div class="pub-meta">Polymers, Vol. 15(24), pp. 4623</div>
+      <a class="pub-link" href="https://doi.org/10.3390/polym15244623" target="_blank" rel="noopener"><i class="fa-solid fa-link"></i> doi.org/10.3390/polym15244623</a>
+    </div>
+
+    <div class="pub-card other"><span class="pub-num">1.</span>
+      <div class="pub-title">Synthesis of Transition-Metal-Doped Nanocatalysts with Antibacterial Capabilities Using a Complementary Green Method</div>
+      <div class="pub-authors">A. Singh, et al. (2023)</div>
+      <div class="pub-meta">Molecules, Vol. 28(10), pp. 1–14</div>
+      <a class="pub-link" href="https://doi.org/10.3390/molecules28104182" target="_blank" rel="noopener"><i class="fa-solid fa-link"></i> doi.org/10.3390/molecules28104182</a>
+    </div>
+  </div>
+
+  <!-- Thesis -->
+  <div class="cat-block" data-cat="thesis">
+    <h2 class="cat-title"><i class="fa-solid fa-graduation-cap"></i> Theses</h2>
+
+    <div class="pub-card thesis"><span class="pub-num">2.</span>
+      <div class="pub-title">Vehicle Diagnostics using Artificial Intelligence and Digital Signal Processing Methods</div>
+      <div class="pub-meta">Doctoral Dissertation. Department of Measurements and Control Systems, Silesian University of Technology, Gliwice, Poland (Jul 2025)</div>
+      <a class="pub-link" href="https://repolis.bg.polsl.pl/dlibra/publication/90344/edition/80858/content" target="_blank" rel="noopener"><i class="fa-solid fa-file-pdf"></i> View dissertation</a>
+    </div>
+
+    <div class="pub-card thesis"><span class="pub-num">1.</span>
+      <div class="pub-title">Containment Control Problem for Multi-Agent Systems</div>
+      <div class="pub-meta">M.Sc. Thesis. School of Automation, Nanjing University of Science and Technology, Nanjing, China (Jun 2020)</div>
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <div class="container">
+    <p>&copy; <span id="year"></span> Dr. Muhammad Ahsan. Full profiles: <a href="https://scholar.google.com/citations?user=yQN2u24AAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a> &middot; <a href="https://orcid.org/0000-0003-2362-3297" target="_blank" rel="noopener">ORCID</a></p>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+  const buttons = document.querySelectorAll('.filter-btn');
+  const blocks = document.querySelectorAll('.cat-block');
+  buttons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      buttons.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const filter = btn.dataset.filter;
+      blocks.forEach(block => {
+        block.classList.toggle('hidden', filter !== 'all' && block.dataset.cat !== filter);
+      });
+    });
+  });
+</script>
 </body>
-
 </html>
