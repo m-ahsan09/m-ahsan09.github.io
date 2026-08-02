@@ -1,292 +1,801 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <script>
-        (function(i, s, o, g, r, a, m) {
-            i['GoogleAnalyticsObject'] = r;
-            i[r] = i[r] || function() {
-                (i[r].q = i[r].q || []).push(arguments)
-            }, i[r].l = 1 * new Date();
-            a = s.createElement(o),
-                m = s.getElementsByTagName(o)[0];
-            a.async = 1;
-            a.src = g;
-            m.parentNode.insertBefore(a, m)
-        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dr. Muhammad Ahsan | Researcher in Condition Monitoring &amp; Fault Diagnosis</title>
+<meta name="description" content="Portfolio of Dr. Muhammad Ahsan, Postdoctoral Researcher specializing in AI-driven condition monitoring, fault diagnosis and signal processing for rotating machinery.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+  :root{
+    --navy:#1a2332;
+    --navy-light:#232f45;
+    --teal:#0d9488;
+    --blue:#2563eb;
+    --bg:#f8f9fa;
+    --text:#2d3748;
+    --muted:#64748b;
+    --white:#ffffff;
+    --border:#e2e8f0;
+    --shadow: 0 4px 20px rgba(26,35,50,0.08);
+    --shadow-hover: 0 12px 30px rgba(26,35,50,0.14);
+    --radius: 14px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:'Inter',sans-serif;
+    color:var(--text);
+    background:var(--bg);
+    line-height:1.65;
+    overflow-x:hidden;
+  }
+  h1,h2,h3,h4{font-family:'Poppins',sans-serif;color:var(--navy);}
+  a{text-decoration:none;color:inherit;}
+  ul{list-style:none;}
+  img{max-width:100%;display:block;}
+  .container{max-width:1140px;margin:0 auto;padding:0 24px;}
+  section{padding:100px 0;}
+  .section-header{text-align:center;margin-bottom:60px;}
+  .section-header .eyebrow{
+    display:inline-block;
+    font-size:0.78rem;
+    font-weight:700;
+    letter-spacing:2px;
+    text-transform:uppercase;
+    color:var(--teal);
+    margin-bottom:12px;
+  }
+  .section-header h2{font-size:2.2rem;font-weight:700;}
+  .section-header p{color:var(--muted);max-width:620px;margin:14px auto 0;font-size:1.02rem;}
 
-        ga('create', 'UA-60795702-1', 'auto');
-        ga('send', 'pageview');
-    </script>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Official Home Page of Muhammad Ahsan, PhD.">
-    <meta name="author" content="Muhammad Ahsan">
-    <title>Welcome to Dr. M. Ahsan's Home page</title>
+  /* ===== NAV ===== */
+  header{
+    position:fixed;top:0;left:0;width:100%;z-index:1000;
+    background:rgba(26,35,50,0.92);
+    backdrop-filter:blur(10px);
+    transition:all 0.3s ease;
+  }
+  nav{
+    display:flex;align-items:center;justify-content:space-between;
+    max-width:1140px;margin:0 auto;padding:18px 24px;
+  }
+  .logo{font-family:'Poppins',sans-serif;font-weight:700;color:var(--white);font-size:1.2rem;letter-spacing:0.5px;}
+  .logo span{color:var(--teal);}
+  .nav-links{display:flex;gap:32px;list-style:none;}
+  .nav-links a{
+    color:rgba(255,255,255,0.85);font-size:0.92rem;font-weight:500;
+    position:relative;padding:4px 0;transition:color 0.25s;
+  }
+  .nav-links a:hover{color:var(--teal);}
+  .nav-links a::after{
+    content:'';position:absolute;left:0;bottom:-4px;width:0;height:2px;
+    background:var(--teal);transition:width 0.3s;
+  }
+  .nav-links a:hover::after{width:100%;}
+  .hamburger{
+    display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;z-index:1100;
+  }
+  .hamburger span{width:26px;height:2px;background:var(--white);border-radius:2px;transition:all 0.3s;}
+  .hamburger.active span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+  .hamburger.active span:nth-child(2){opacity:0;}
+  .hamburger.active span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
 
-    <!-- Bootstrap core CSS -->
-    <link href="dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Custom styles for this template -->
-    <link href="justified-nav.css" rel="stylesheet">
-    <!-- Link to banner styles -->
-    <link href="cover.css" rel="stylesheet">
-    <!-- Stylesheet for page bottom -->
-    <link rel="stylesheet" media="all" href="cc_page_bottom.css">
+  @media(max-width:900px){
+    .nav-links{
+      position:fixed;top:0;right:-100%;height:100vh;width:min(75%,320px);
+      background:var(--navy);flex-direction:column;justify-content:center;
+      gap:30px;transition:right 0.35s ease;align-items:flex-start;padding:40px;
+    }
+    .nav-links.active{right:0;box-shadow:-8px 0 30px rgba(0,0,0,0.3);}
+    .hamburger{display:flex;}
+  }
 
-    <style>
-        /* Layout Fixes */
-        body {
-            margin: 0;
-            padding: 0;
-            overflow-x: hidden;
-        }
+  /* ===== HERO ===== */
+  .hero{
+    min-height:100vh;
+    display:flex;align-items:center;
+    position:relative;
+    background:
+      radial-gradient(circle at 15% 20%, rgba(13,148,136,0.25), transparent 45%),
+      radial-gradient(circle at 85% 80%, rgba(37,99,235,0.25), transparent 45%),
+      linear-gradient(160deg, var(--navy) 0%, #0f1622 100%);
+    overflow:hidden;
+  }
+  .hero::before{
+    content:'';position:absolute;inset:0;
+    background-image:
+      linear-gradient(rgba(255,255,255,0.035) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px);
+    background-size:48px 48px;
+    mask-image:radial-gradient(circle at center, black 40%, transparent 85%);
+  }
+  .hero-content{position:relative;z-index:2;padding-top:80px;}
+  .hero-grid{display:grid;grid-template-columns:1.3fr 0.7fr;gap:60px;align-items:center;}
+  .hero-tag{
+    display:inline-flex;align-items:center;gap:8px;
+    background:rgba(13,148,136,0.15);border:1px solid rgba(13,148,136,0.4);
+    color:#5eead4;padding:7px 16px;border-radius:30px;font-size:0.82rem;font-weight:500;
+    margin-bottom:24px;
+  }
+  .hero h1{
+    font-size:3.4rem;font-weight:800;color:var(--white);line-height:1.12;margin-bottom:18px;
+  }
+  .hero h1 .accent{
+    background:linear-gradient(90deg,#2dd4bf,#60a5fa);
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+  }
+  .hero .role{font-size:1.3rem;color:#93c5fd;font-weight:600;margin-bottom:18px;}
+  .hero .statement{color:#cbd5e1;font-size:1.05rem;max-width:560px;margin-bottom:36px;}
+  .btn-row{display:flex;gap:16px;flex-wrap:wrap;}
+  .btn{
+    display:inline-flex;align-items:center;gap:10px;
+    padding:14px 30px;border-radius:8px;font-weight:600;font-size:0.95rem;
+    cursor:pointer;border:none;transition:all 0.25s ease;
+  }
+  .btn-primary{
+    background:linear-gradient(90deg,var(--teal),#0891b2);color:#fff;
+    box-shadow:0 8px 24px rgba(13,148,136,0.35);
+  }
+  .btn-primary:hover{transform:translateY(-3px);box-shadow:0 12px 30px rgba(13,148,136,0.45);}
+  .btn-outline{
+    background:transparent;border:1.5px solid rgba(255,255,255,0.35);color:#fff;
+  }
+  .btn-outline:hover{background:rgba(255,255,255,0.08);border-color:#fff;}
+  .hero-photo-wrap{display:flex;justify-content:center;}
+  .hero-photo{
+    width:280px;height:280px;border-radius:50%;
+    background:linear-gradient(135deg, rgba(13,148,136,0.25), rgba(37,99,235,0.25));
+    border:2px solid rgba(255,255,255,0.15);
+    display:flex;align-items:center;justify-content:center;
+    position:relative;
+  }
+  .hero-photo i{font-size:5.5rem;color:rgba(255,255,255,0.35);}
+  .hero-photo::after{
+    content:'';position:absolute;inset:-14px;border-radius:50%;
+    border:1px dashed rgba(94,234,212,0.35);
+    animation:spin 30s linear infinite;
+  }
+  @keyframes spin{to{transform:rotate(360deg);}}
+  .scroll-cue{
+    position:absolute;bottom:28px;left:50%;transform:translateX(-50%);
+    color:rgba(255,255,255,0.5);font-size:1.4rem;animation:bounce 2s infinite;
+  }
+  @keyframes bounce{0%,100%{transform:translateX(-50%) translateY(0);}50%{transform:translateX(-50%) translateY(8px);}}
 
-        .masthead {
-            margin-bottom: 0px !important; /* Removes gap between banner and nav */
-        }
+  @media(max-width:900px){
+    .hero-grid{grid-template-columns:1fr;text-align:center;}
+    .hero .statement{margin-left:auto;margin-right:auto;}
+    .btn-row{justify-content:center;}
+    .hero-photo-wrap{order:-1;}
+    .hero-photo{width:180px;height:180px;}
+    .hero-photo i{font-size:3.5rem;}
+    .hero h1{font-size:2.3rem;}
+  }
 
-        .container, .row, .col-lg-2, .col-lg-10 {
-            position: static;
-        }
+  /* ===== FADE-IN ===== */
+  .reveal{opacity:0;transform:translateY(28px);transition:opacity 0.7s ease, transform 0.7s ease;}
+  .reveal.visible{opacity:1;transform:translateY(0);}
 
-        /* Profile Grid Alignment */
-        .logobox__content {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1.25rem;
-            align-items: flex-start;
-            justify-content: center; /* FIXED: This centers the 7 items */
-        }
+  /* ===== ABOUT ===== */
+  .about-grid{display:grid;grid-template-columns:1.4fr 1fr;gap:50px;align-items:start;}
+  .about-text p{margin-bottom:16px;color:var(--text);}
+  .info-card{
+    background:var(--white);border-radius:var(--radius);padding:28px;
+    box-shadow:var(--shadow);border:1px solid var(--border);
+  }
+  .info-card h3{font-size:1.1rem;margin-bottom:18px;display:flex;align-items:center;gap:10px;}
+  .info-card h3 i{color:var(--teal);}
+  .info-row{display:flex;align-items:flex-start;gap:12px;margin-bottom:14px;font-size:0.94rem;}
+  .info-row:last-child{margin-bottom:0;}
+  .info-row i{color:var(--blue);width:18px;margin-top:3px;}
+  .info-row a{color:var(--blue);word-break:break-all;}
+  .info-row a:hover{text-decoration:underline;}
 
-        /* Profile Card Styling */
-        .logo-block {
-            text-align: center;
-            background-color: #fff;
-            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.25);
-            transition: 0.4s ease-out;
-            overflow: hidden;
-            border-radius: 5px;
-            min-width: 130px;
-            width: 130px;
-            height: 210px;
-            position: relative;
-            padding: 10px;
-            font-size: 18px;
-            line-height: 1.2;
-        }
+  /* ===== TIMELINE ===== */
+  .timeline{position:relative;max-width:880px;margin:0 auto;}
+  .timeline::before{
+    content:'';position:absolute;left:20px;top:0;bottom:0;width:2px;
+    background:linear-gradient(var(--teal), var(--blue));
+  }
+  .tl-item{position:relative;padding-left:60px;margin-bottom:42px;}
+  .tl-item:last-child{margin-bottom:0;}
+  .tl-dot{
+    position:absolute;left:12px;top:4px;width:18px;height:18px;border-radius:50%;
+    background:var(--white);border:3px solid var(--teal);
+  }
+  .tl-item.blue .tl-dot{border-color:var(--blue);}
+  .tl-card{
+    background:var(--white);border-radius:var(--radius);padding:22px 26px;
+    box-shadow:var(--shadow);border:1px solid var(--border);
+    transition:transform 0.25s, box-shadow 0.25s;
+  }
+  .tl-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-hover);}
+  .tl-date{
+    display:inline-block;font-size:0.78rem;font-weight:700;color:var(--teal);
+    background:rgba(13,148,136,0.1);padding:4px 12px;border-radius:20px;margin-bottom:10px;
+  }
+  .tl-card h3{font-size:1.12rem;margin-bottom:4px;}
+  .tl-card .tl-org{color:var(--blue);font-weight:600;font-size:0.94rem;margin-bottom:10px;}
+  .tl-card p{color:var(--muted);font-size:0.92rem;}
+  .tl-card ul{margin-top:8px;padding-left:0;}
+  .tl-card ul li{font-size:0.9rem;color:var(--muted);margin-bottom:4px;padding-left:16px;position:relative;}
+  .tl-card ul li::before{content:'▸';position:absolute;left:0;color:var(--teal);}
 
-        .logo-block:hover {
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
-            transform: translateY(-2px);
-        }
+  section.alt{background:var(--white);}
 
-        .logo-block__image {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 120px;
-        }
+  /* ===== PUBLICATIONS ===== */
+  .pub-tabs{display:flex;justify-content:center;gap:12px;margin-bottom:36px;flex-wrap:wrap;}
+  .pub-tab{
+    padding:10px 24px;border-radius:30px;border:1.5px solid var(--border);
+    background:var(--white);font-weight:600;font-size:0.9rem;cursor:pointer;color:var(--muted);
+    transition:all 0.25s;
+  }
+  .pub-tab.active{background:var(--navy);border-color:var(--navy);color:#fff;}
+  .pub-group{display:none;}
+  .pub-group.active{display:block;}
+  .pub-card{
+    background:var(--white);border-radius:var(--radius);padding:26px 28px;
+    margin-bottom:18px;box-shadow:var(--shadow);border:1px solid var(--border);
+    border-left:4px solid var(--teal);
+    display:flex;flex-direction:column;gap:10px;
+    transition:transform 0.25s, box-shadow 0.25s;
+  }
+  .pub-card.conf{border-left-color:var(--blue);}
+  .pub-card:hover{transform:translateY(-4px) translateX(2px);box-shadow:var(--shadow-hover);}
+  .pub-top{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;align-items:flex-start;}
+  .pub-title{font-family:'Poppins',sans-serif;font-weight:600;font-size:1.02rem;color:var(--navy);flex:1;min-width:250px;}
+  .badges{display:flex;gap:8px;flex-wrap:wrap;}
+  .badge{
+    font-size:0.72rem;font-weight:700;padding:4px 11px;border-radius:20px;white-space:nowrap;
+  }
+  .badge.q1{background:#dcfce7;color:#15803d;}
+  .badge.if{background:#dbeafe;color:#1d4ed8;}
+  .pub-meta{color:var(--muted);font-size:0.88rem;}
+  .pub-authors{font-size:0.86rem;color:var(--muted);font-style:italic;}
+  .pub-link{
+    align-self:flex-start;font-size:0.85rem;font-weight:600;color:var(--teal);
+    display:inline-flex;align-items:center;gap:6px;margin-top:4px;
+  }
+  .pub-link:hover{text-decoration:underline;}
 
-        .logo-block__image img {
-            max-height: 100px;
-            max-width: 100px;
-            object-fit: contain;
-        }
+  /* ===== GRANTS ===== */
+  .grants-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px;}
+  .grant-card{
+    background:var(--white);border-radius:var(--radius);padding:28px;
+    box-shadow:var(--shadow);border:1px solid var(--border);position:relative;
+    transition:transform 0.25s, box-shadow 0.25s;
+  }
+  .grant-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-hover);}
+  .grant-card.featured{border:1.5px solid var(--teal);background:linear-gradient(135deg,#f0fdfa,#ffffff);}
+  .grant-icon{
+    width:50px;height:50px;border-radius:12px;display:flex;align-items:center;justify-content:center;
+    background:linear-gradient(135deg,var(--teal),var(--blue));color:#fff;font-size:1.3rem;margin-bottom:16px;
+  }
+  .grant-card h3{font-size:1.05rem;margin-bottom:8px;}
+  .grant-card .grant-date{font-size:0.78rem;color:var(--teal);font-weight:700;margin-bottom:10px;display:block;}
+  .grant-card p{color:var(--muted);font-size:0.9rem;}
+  .grant-card .outcome{margin-top:10px;font-size:0.85rem;color:var(--navy);font-weight:500;}
 
-        .logo-block__copy {
-            padding: 10px 0 0 0;
-            text-align: center;
-        }
+  /* ===== TEACHING ===== */
+  .teach-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;}
+  .teach-card{
+    background:var(--white);border-radius:var(--radius);padding:32px;
+    box-shadow:var(--shadow);border:1px solid var(--border);
+  }
+  .teach-card h3{margin-bottom:14px;display:flex;align-items:center;gap:10px;font-size:1.15rem;}
+  .teach-card h3 i{color:var(--teal);}
+  .course-pills{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px;}
+  .course-pill{
+    background:rgba(37,99,235,0.08);color:var(--blue);font-size:0.85rem;font-weight:600;
+    padding:8px 16px;border-radius:8px;transition:background 0.2s, color 0.2s;
+  }
+  .course-pill:hover{background:var(--blue);color:#fff;}
+  @media(max-width:800px){.teach-grid{grid-template-columns:1fr;}}
 
-        .logo-block__title {
-            margin: 0;
-            font-size: 1rem;
-            line-height: 1.3;
-        }
+  /* ===== OTHER INFO ===== */
+  .other-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px;}
+  .other-card{
+    background:var(--white);border-radius:var(--radius);padding:26px;
+    box-shadow:var(--shadow);border:1px solid var(--border);
+  }
+  .other-card h3{font-size:1rem;margin-bottom:14px;display:flex;align-items:center;gap:10px;}
+  .other-card h3 i{color:var(--teal);}
+  .other-card ul li{font-size:0.9rem;color:var(--muted);margin-bottom:10px;padding-left:16px;position:relative;}
+  .other-card ul li::before{content:'—';position:absolute;left:0;color:var(--teal);}
+  .other-card ul li:last-child{margin-bottom:0;}
+  .other-card ul li strong{color:var(--text);}
 
-        .logo-block__title-link {
-            text-decoration: none;
-            color: #32333c;
-            font-weight: normal;
-        }
+  /* ===== FOOTER ===== */
+  footer{
+    background:var(--navy);color:rgba(255,255,255,0.7);padding:36px 0;text-align:center;
+    position:relative;font-size:0.88rem;
+  }
+  footer a{color:#5eead4;}
+  .back-to-top{
+    position:fixed;bottom:30px;right:30px;width:48px;height:48px;border-radius:50%;
+    background:linear-gradient(135deg,var(--teal),var(--blue));color:#fff;border:none;
+    display:flex;align-items:center;justify-content:center;font-size:1.1rem;cursor:pointer;
+    box-shadow:0 8px 24px rgba(0,0,0,0.25);opacity:0;pointer-events:none;
+    transition:opacity 0.3s, transform 0.3s;z-index:900;
+  }
+  .back-to-top.show{opacity:1;pointer-events:auto;}
+  .back-to-top:hover{transform:translateY(-4px);}
 
-        .logo-block__title-link span {
-            font-size: 13px;
-            display: inline-block;
-        }
-    </style>
-
-    <script src="assets/js/ie-emulation-modes-warning.js"></script>
-    <script src="assets/js/ie10-viewport-bug-workaround.js"></script>
-    <link rel='shortcut icon' href='img/favicon.ico' type='image/x-icon' />
+  @media(max-width:700px){
+    section{padding:70px 0;}
+    .section-header h2{font-size:1.7rem;}
+    .about-grid{grid-template-columns:1fr;}
+    .pub-top{flex-direction:column;}
+  }
+</style>
 </head>
-
 <body>
-    <div class="container">
-        <!-- Banner Section -->
-        <div class="masthead">
-            <div class="row">
-                <div class="col-sm-8 text-overlay">
-                    <h2 class="muted"><b>Muhammad AHSAN</b> Dr.-Engr.</h2>
-                    <h5>Researcher in Advancing Structural Health Monitoring and Intelligent Fault Diagnosis</h5>
-                </div>
-            </div>
-        </div>
 
-        <!-- Navigation Section -->
-        <ul class="nav nav-justified">
-            <li class="active"><a href="index.html">Home</a></li>
-            <li><a href="publications.html">Publications</a></li>
-            <li><a href="projects.html">Projects</a></li>
-        </ul>
+<header id="header">
+  <nav>
+    <a href="#hero" class="logo">M. <span>Ahsan</span></a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#about" class="nav-link">About</a></li>
+      <li><a href="#experience" class="nav-link">Experience</a></li>
+      <li><a href="#education" class="nav-link">Education</a></li>
+      <li><a href="#publications" class="nav-link">Publications</a></li>
+      <li><a href="#grants" class="nav-link">Grants</a></li>
+      <li><a href="#teaching" class="nav-link">Teaching</a></li>
+      <li><a href="#other" class="nav-link">More</a></li>
+      <li><a href="projects.html" class="nav-link">All Projects <i class="fa-solid fa-arrow-up-right-from-square" style="font-size:0.7em;"></i></a></li>
+      <li><a href="courses.html" class="nav-link">Courses <i class="fa-solid fa-arrow-up-right-from-square" style="font-size:0.7em;"></i></a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+</header>
+
+<!-- ================= HERO ================= -->
+<section class="hero" id="hero">
+  <div class="container hero-content">
+    <div class="hero-grid">
+      <div>
+        <span class="hero-tag"><i class="fa-solid fa-circle-dot"></i> Available for research collaboration</span>
+        <h1>Dr. Muhammad <span class="accent">Ahsan</span></h1>
+        <div class="role">Independent Researcher</div>
+        <p class="statement">I develop hybrid AI and physics-informed frameworks for condition monitoring and fault diagnosis of complex industrial systems — wind turbines, rotating machinery, and mechatronic systems — integrating machine learning, digital signal processing, and domain knowledge into explainable decision support.</p>
+        <div class="btn-row">
+          <a href="#about" class="btn btn-primary"><i class="fa-solid fa-arrow-down"></i> About Me</a>
+          <a href="#publications" class="btn btn-outline"><i class="fa-solid fa-book"></i> View Publications</a>
+        </div>
+      </div>
+      <div class="hero-photo-wrap">
+        <div class="hero-photo"><i class="fa-solid fa-user"></i></div>
+      </div>
+    </div>
+  </div>
+  <div class="scroll-cue"><i class="fa-solid fa-chevron-down"></i></div>
+</section>
+
+<!-- ================= ABOUT ================= -->
+<section id="about">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="eyebrow">About</span>
+      <h2>Professional Summary</h2>
+    </div>
+    <div class="about-grid">
+      <div class="about-text reveal">
+        <p>Dr. Muhammad Ahsan is an internationally trained researcher specializing in SHM, data analysis (vibration, acoustic, and SCADA), nonlinear signal processing, and AI-driven diagnostics. He earned a PhD in engineering and technical science, and disciple of Automation, Electronics, Electrical Engineering and Space Technologies from the Silesian University of Technology (SUT), Poland (2025), focusing on low-cost MEMS-based vehicle engine diagnostics, advanced digital signal processing, and AI classification models—resulting in peer-reviewed journal papers and conference publications. He also holds a Master’s degree in Control Theory and Engineering from Nanjing University of Science and Technology, China and Bachelor’s degree in Electrical Engineering from the Air University, Pakistan.</p>
+		<p>Dr. Ahsan’s core competences include advanced time–frequency analysis (STFT, CWT, spectral kurtosis, EMD), AI architecture design (hybrid CWT–DCNN–LSTM, LeNet5–LSTM), and development of experimental platforms for low-cost sensing in rotating machinery, engines, and wind turbines. Proficient in Python and MATLAB, he combines theoretical innovation with hands-on implementation. His teaching and mentoring at SUT, along with professional training in optimization, reinforcement learning, structural dynamics, and project management, reflect a strong commitment to knowledge transfer and research leadership.</p>
+		<p>Dr. Ahsan has authored over 20 publications in reputed journals and conferences, contributing to the advancement of fault diagnosis in bearings, machine health monitoring, and control system design. His research aims to improve the reliability, safety, and efficiency of industrial systems, with a particular emphasis on optimization, nonlinear control, and robust multidisciplinary approaches. Through his work, Dr. Ahsan continues to push the boundaries of knowledge, making significant contributions to both academia and industry.</p>
+      </div>
+      <div class="info-card reveal">
+        <h3><i class="fa-solid fa-id-card"></i> Personal Details</h3>
+        <div class="info-row"><i class="fa-solid fa-flag"></i><span>Pakistani national</span></div>
+        <div class="info-row"><i class="fa-solid fa-envelope"></i><a href="mailto:AhsanMuhammad@aol.com">AhsanMuhammad@aol.com</a></div>
+        <div class="info-row"><i class="fa-brands fa-orcid"></i><a href="https://orcid.org/0000-0003-2362-3297" target="_blank" rel="noopener">0000-0003-2362-3297</a></div>
+        <div class="info-row"><i class="fa-solid fa-globe"></i><a href="https://m-ahsan09.github.io" target="_blank" rel="noopener">m-ahsan09.github.io</a></div>
+        <div class="info-row"><i class="fa-solid fa-location-dot"></i><span>Kraków, Poland</span></div>
+        <div class="info-row"><i class="fa-brands fa-google-scholar"></i><a href="https://scholar.google.com/citations?user=yQN2u24AAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a></div>
+        <div class="info-row"><i class="fa-brands fa-github"></i><a href="https://github.com/m-ahsan09" target="_blank" rel="noopener">github.com/m-ahsan09</a></div>
+        <div class="info-row"><i class="fa-brands fa-researchgate"></i><a href="https://www.researchgate.net/profile/Muhammad-Ahsan-81" target="_blank" rel="noopener">ResearchGate</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= EXPERIENCE ================= -->
+<section id="experience" class="alt">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="eyebrow">Career</span>
+      <h2>Professional Experience</h2>
+      <p>Research positions and international visiting appointments across Poland, the UK, Italy, and Hungary.</p>
+    </div>
+    <div class="timeline">
+      <div class="tl-item reveal">
+        <div class="tl-dot"></div>
+        <div class="tl-card">
+          <span class="tl-date">Oct 2025 – 2026</span>
+          <h3>Postdoctoral Researcher (Research Assistant Professor)</h3>
+          <div class="tl-org">Faculty of Mechanical Engineering and Robotics, AGH University of Science and Technology, Kraków, Poland</div>
+          <p>Developing an integrated SCADA-based condition monitoring and fault detection framework for wind turbines, incorporating image analysis and trend-monitoring techniques (IDUB Excellence Initiative project).</p>
+        </div>
+      </div>
+      <div class="tl-item reveal">
+        <div class="tl-dot"></div>
+        <div class="tl-card">
+          <span class="tl-date">Oct 2020 – Jul 2025</span>
+          <h3>PhD Researcher</h3>
+          <div class="tl-org">Silesian University of Technology, Gliwice, Poland</div>
+          <p>Dissertation: <em>Vehicle Diagnostics using Artificial Intelligence and Digital Signal Processing Methods</em>. Used low-cost MEMS accelerometers to capture vehicle-engine vibration data, analysed with advanced DSP techniques and AI models for engine health diagnosis.</p>
+        </div>
+      </div>
+      <div class="tl-item blue reveal">
+        <div class="tl-dot"></div>
+        <div class="tl-card">
+          <span class="tl-date">13 – 23 Dec 2024</span>
+          <h3>Visiting Researcher</h3>
+          <div class="tl-org">Department of Networks and Digital Media, Kingston University London, UK</div>
+        </div>
+      </div>
+      <div class="tl-item blue reveal">
+        <div class="tl-dot"></div>
+        <div class="tl-card">
+          <span class="tl-date">Jul – Oct 2022</span>
+          <h3>Visiting Researcher</h3>
+          <div class="tl-org">Dynamics and Vibrations Group, University of Modena and Reggio Emilia, Italy</div>
+          <p>Research on vibration-based condition monitoring of mechatronic systems using AI and DSP (Erasmus+ Mobility Grant).</p>
+        </div>
+      </div>
+      <div class="tl-item blue reveal">
+        <div class="tl-dot"></div>
+        <div class="tl-card">
+          <span class="tl-date">13 – 26 Sep 2021</span>
+          <h3>Research Internship</h3>
+          <div class="tl-org">Department of Networked Systems and Services, Budapest University of Technology and Economics, Hungary</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= EDUCATION ================= -->
+<section id="education">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="eyebrow">Academic Background</span>
+      <h2>Education</h2>
+    </div>
+    <div class="timeline">
+      <div class="tl-item reveal">
+        <div class="tl-dot"></div>
+        <div class="tl-card">
+          <span class="tl-date">Defended 09 Jul 2025 · Awarded 15 Jul 2025</span>
+          <h3>Doctor of Philosophy — Engineering and Technical Science</h3>
+          <div class="tl-org">Silesian University of Technology, Gliwice, Poland</div>
+          <p>Discipline: Automation, Electronics, Electrical Engineering and Space Technologies.</p>
+        </div>
+      </div>
+      <div class="tl-item reveal">
+        <div class="tl-dot"></div>
+        <div class="tl-card">
+          <span class="tl-date">19 Jun 2020</span>
+          <h3>Master of Control Theory and Control Engineering</h3>
+          <div class="tl-org">Nanjing University of Science and Technology, Nanjing, China</div>
+          <p>Research project: Containment Control Problem for Multi-Agent Systems (Chinese Government Scholarship, CSC).</p>
+        </div>
+      </div>
+      <div class="tl-item reveal">
+        <div class="tl-dot"></div>
+        <div class="tl-card">
+          <span class="tl-date">24 Apr 2014</span>
+          <h3>Bachelor of Electrical Engineering (Telecom)</h3>
+          <div class="tl-org">Air University, Islamabad, Pakistan</div>
+          <p>Silver Medal — second highest CGPA in the Department of Electrical Engineering.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PUBLICATIONS ================= -->
+<section id="publications" class="alt">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="eyebrow">Research Output</span>
+      <h2>Selected Publications</h2>
+      <p>Peer-reviewed journal and conference contributions on AI- and signal-processing-based condition monitoring and fault diagnosis. 30 total publications across journals, conferences, and collaborative works.</p>
+      <a href="publications.html" target="_blank" rel="noopener" class="btn btn-primary" style="margin-top:20px;"><i class="fa-solid fa-list"></i> View Complete Publication List</a>
     </div>
 
-    <div class="container theme-showcase" style="padding-top:20px">
-        <div class="inner">
-            <div class="row">
-                <div class="col-lg-2">
-                    <div style="text-align:center;">
-                        <img src="img/Ahsan.jpg" width="180" alt="My photo" class="rounded-circle" />
-                    </div>
-                </div>
-                <div class="col-lg-10">
-                    <div>
-                        <h2 style="text-align:left">Short Biography</h2>
-                        <p style="text-align:justify;">
-                            Dr. Muhammad Ahsan received his Bachelor’s degree in Electrical Engineering from <a href="https://au.edu.pk/"> Air University</a>, Islamabad, Pakistan, in 2014, and his Master's degree in Control Theory and Control Engineering from <a href="https://www.njust.edu.cn/"> Nanjing University of Science and Technology</a>, Nanjing, China, in 2020. He completed his Ph.D. in July 2025 from <a href="https://www.polsl.pl/"> Silesian University of Technology</a>, Gliwice, Poland, where he conducted multidisciplinary research bridging signal processing, machine learning, and control engineering.
-						   <!-- In October 2025, Dr. Ahsan joined <a href="https://www.agh.edu.pl/"> AGH University of Science and Technology</a>, Kraków, Poland, as an Assistant Professor of Research at the Department of Robotics and Mechatronics, Faculty of Mechanical Engineering and Robotics. His research focuses on developing advanced methodologies for machine health diagnosis and intelligent control systems by integrating digital signal processing, artificial intelligence, and nonlinear control techniques. -->
-						   Dr. Ahsan has authored over 20 publications in reputed journals and conferences, contributing to the advancement of fault diagnosis in bearings, machine health monitoring, and control system design. The aim of Dr. Ahsan's research is to enhance the reliability, safety, and efficiency of industrial systems, with a particular emphasis on optimization, nonlinear control, and robust multidisciplinary approaches. Through his work, Dr. Ahsan continues to push the boundaries of knowledge, making significant contributions to both academia and industry. 
-                        </p>
-                    </div>
-                </div>
-            </div>
+    <div class="pub-tabs reveal">
+      <button class="pub-tab active" data-target="journals">Journal Papers</button>
+      <button class="pub-tab" data-target="conferences">Conference Papers</button>
+    </div>
 
-            <div class="row">
-                <h2>Research Interests</h2>
-                <p> Vibration Analysis and Health Monitoring; Signal Processing and Machine Learning; Nonlinear and Distributed Control.</p>
-            </div>
-
-            <div class="row">
-                <h2>News & Announcements</h2>
-                <ul>
-                    <li>[July, 2025]: I successfully defended my doctoral dissertation and granted Doctoral title in the field: Engineering and Technical Sciences.</li>
-                    <li>[April, 2025]: Our paper, Bearing Fault Diagnosis in Induction Motors, has been accepted for publication in IEEE Access.</li>
-                    <li>[October, 2024]: Our paper, Enhanced Fault Diagnosis in Rotating Machinery, has been accepted for publication in IEEE Access.</li>
-                </ul>
-            </div>
-
-            <div class="row">
-                <div class="col-sm-6">
-                    <h2>Contact Information</h2>
-                    <ul>
-                        <li><b>Email:</b> AhsanMuhammad@aol.com </li>
-                    </ul>
-                </div>
-                <div class="col-sm-6" style="text-align:right">
-                    <a class="twitter-timeline" data-width="500" data-height="250" href="">Tweets</a>
-                    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-                </div>
-            </div>
-
-            <div class="row">
-                <h2>Disclaimer</h2>
-                This is a personal website. The opinions expressed are mine and do not necessarily represent the views of my employer.
-            </div>
-
-            <hr>
-
-            <!-- Profile Links Section - Centered -->
-            <div class="wp-block-uis-logobox logobox">
-                <div class="logobox__content">
-                    <div class="wp-block-uis-logo logo-block">
-                        <div class="logo-block__image">
-                            <a href="https://scholar.google.com/citations?user=yQN2u24AAAAJ&hl=en/" target="_blank">
-                                <img src="./img/google_scholar.png" alt="Google Scholar">
-                            </a>
-                        </div>
-                        <div class="logo-block__copy">
-                            <p class="logo-block__title"><a class="logo-block__title-link" target="_blank" href="https://scholar.google.com/citations?user=yQN2u24AAAAJ&hl=en/"><span>GoogleScholar</span></a></p>
-                        </div>
-                    </div>
-
-                    <div class="wp-block-uis-logo logo-block">
-                        <div class="logo-block__image">
-                            <a href="https://orcid.org/0000-0003-2362-3297/" target="_blank">
-                                <img src="./img/orcid.png" alt="ORCID">
-                            </a>
-                        </div>
-                        <div class="logo-block__copy">
-                            <p class="logo-block__title"><a class="logo-block__title-link" target="_blank" href="https://orcid.org/0000-0003-2362-3297/"><span>ORCiD</span></a></p>
-                        </div>
-                    </div>
-
-                    <div class="wp-block-uis-logo logo-block">
-                        <div class="logo-block__image">
-                            <a href="https://www.scopus.com/authid/detail.uri?authorId=57543617600" target="_blank">
-                                <img src="./img/scopus.png" alt="Scopus">
-                            </a>
-                        </div>
-                        <div class="logo-block__copy">
-                            <p class="logo-block__title"><a class="logo-block__title-link" target="_blank" href="https://www.scopus.com/authid/detail.uri?authorId=57543617600"><span>Scopus</span></a></p>
-                        </div>
-                    </div>
-
-                    <div class="wp-block-uis-logo logo-block">
-                        <div class="logo-block__image">
-                            <a href="https://www.webofscience.com/wos/author/record/PMW-5367-2026" target="_blank">
-                                <img src="./img/WoS.png" alt="Web of Science">
-                            </a>
-                        </div>
-                        <div class="logo-block__copy">
-                            <p class="logo-block__title"><a class="logo-block__title-link" target="_blank" href="https://www.webofscience.com/wos/author/record/PMW-5367-2026"><span>WoS</span></a></p>
-                        </div>
-                    </div>
-
-                    <div class="wp-block-uis-logo logo-block">
-                        <div class="logo-block__image">
-                            <a href="https://www.researchgate.net/profile/Muhammad-Ahsan-81" target="_blank">
-                                <img src="./img/RG.png" alt="ResearchGate">
-                            </a>
-                        </div>
-                        <div class="logo-block__copy">
-                            <p class="logo-block__title"><a class="logo-block__title-link" target="_blank" href="https://www.researchgate.net/profile/Muhammad-Ahsan-81"><span>ResearchGate</span></a></p>
-                        </div>
-                    </div>
-
-                    <div class="wp-block-uis-logo logo-block">
-                        <div class="logo-block__image">
-                            <a href="https://sciprofiles.com/profile/2508315" target="_blank">
-                                <img src="./img/SciProfile.png" alt="SciProfiles">
-                            </a>
-                        </div>
-                        <div class="logo-block__copy">
-                            <p class="logo-block__title"><a class="logo-block__title-link" target="_blank" href="https://sciprofiles.com/profile/2508315"><span>SciProfiles</span></a></p>
-                        </div>
-                    </div>
-
-                    <div class="wp-block-uis-logo logo-block">
-                        <div class="logo-block__image">
-                            <a href="https://github.com/m-ahsan09" target="_blank">
-                                <img src="./img/GitHub.png" alt="GitHub">
-                            </a>
-                        </div>
-                        <div class="logo-block__copy">
-                            <p class="logo-block__title"><a class="logo-block__title-link" target="_blank" href="https://github.com/m-ahsan09"><span>GitHub</span></a></p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <div class="pub-group active" id="journals">
+      <div class="pub-card reveal">
+        <div class="pub-top">
+          <div class="pub-title">Multi-Channel SCADA-Based Image-Driven Power Prediction for Wind Turbines using Optimized LeNet-5-LSTM Hybrid Neural Architecture</div>
+          <div class="badges"><span class="badge q1">Q1</span><span class="badge if">IF 3.2</span></div>
         </div>
-
-        <div style="text-align:center;">
-            <hr>
-            © Muhammad Ahsan 2025.
+        <div class="pub-authors">M. Ahsan &amp; P.B. Dao (2026)</div>
+        <div class="pub-meta">Energies, 19(5), 1–29</div>
+        <a class="pub-link" href="https://doi.org/10.3390/en19051169" target="_blank" rel="noopener"><i class="fa-solid fa-link"></i> doi.org/10.3390/en19051169</a>
+      </div>
+      <div class="pub-card reveal">
+        <div class="pub-top">
+          <div class="pub-title">Bearing Fault Diagnosis in Induction Motors using Low-Cost Triaxial ADXL335 Accelerometer and a Hybrid CWT-DCNN-LSTM Model</div>
+          <div class="badges"><span class="badge q1">Q1</span><span class="badge if">IF 3.6</span></div>
         </div>
-    </div> <!-- /container -->
+        <div class="pub-authors">M. Ahsan, J. Rodriguez &amp; M. Abdelrahem (2025)</div>
+        <div class="pub-meta">IEEE Access, Vol. 13, pp. 101037–101050</div>
+        <a class="pub-link" href="https://doi.org/10.1109/ACCESS.2025.3577672" target="_blank" rel="noopener"><i class="fa-solid fa-link"></i> doi.org/10.1109/ACCESS.2025.3577672</a>
+      </div>
+      <div class="pub-card reveal">
+        <div class="pub-top">
+          <div class="pub-title">Enhanced Fault Diagnosis in Rotating Machinery using a Hybrid CWT-LeNet-5-LSTM Model: Performance Across Various Load Conditions</div>
+          <div class="badges"><span class="badge q1">Q1</span><span class="badge if">IF 3.6</span></div>
+        </div>
+        <div class="pub-authors">M. Ahsan, M.W. Hassan, J. Rodriguez &amp; M. Abdelrahem (2025)</div>
+        <div class="pub-meta">IEEE Access, Vol. 13, pp. 1026–1045</div>
+        <a class="pub-link" href="https://doi.org/10.1109/ACCESS.2024.3522948" target="_blank" rel="noopener"><i class="fa-solid fa-link"></i> doi.org/10.1109/ACCESS.2024.3522948</a>
+      </div>
+      <div class="pub-card reveal">
+        <div class="pub-top">
+          <div class="pub-title">Similarity Index of the STFT-Based Health Diagnosis of Variable Speed Rotating Machines</div>
+          <div class="badges"><span class="badge q1">Q1</span><span class="badge if">IF 4.3</span></div>
+        </div>
+        <div class="pub-authors">M. Ahsan &amp; M.M. Salah (2023)</div>
+        <div class="pub-meta">Intelligent Systems with Applications, Vol. 20, pp. 1–9</div>
+        <a class="pub-link" href="https://doi.org/10.1016/j.iswa.2023.200270" target="_blank" rel="noopener"><i class="fa-solid fa-link"></i> doi.org/10.1016/j.iswa.2023.200270</a>
+      </div>
+      <div class="pub-card reveal">
+        <div class="pub-top">
+          <div class="pub-title">Early-Stage Fault Diagnosis for Rotating Element Bearing using Improved Harmony Search Algorithm with Different Fitness Functions</div>
+          <div class="badges"><span class="badge q1">Q1</span><span class="badge if">IF 5.9</span></div>
+        </div>
+        <div class="pub-authors">M. Ahsan &amp; D. Bismor (2022)</div>
+        <div class="pub-meta">IEEE Transactions on Instrumentation and Measurement, Vol. 71, pp. 1–9</div>
+        <a class="pub-link" href="https://doi.org/10.1109/TIM.2022.3192254" target="_blank" rel="noopener"><i class="fa-solid fa-link"></i> doi.org/10.1109/TIM.2022.3192254</a>
+      </div>
+    </div>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <script src="dist/js/bootstrap.min.js"></script>
+    <div class="pub-group" id="conferences">
+      <div class="pub-card conf reveal">
+        <div class="pub-top"><div class="pub-title">Enhanced LeNet-5-LSTM-Based Diagnosis of PMSM Stator Faults using Vibration Signals Across Different Fault Severities</div></div>
+        <div class="pub-authors">M. Abdelrahem, M. Ahsan &amp; J. Rodriguez (Sep 2025)</div>
+        <div class="pub-meta">IEEE CPERE 2025, Pyramisa Island Aswan, Egypt, pp. 1–6</div>
+        <a class="pub-link" href="https://doi.org/10.1109/CPERE65146.2025.11240075" target="_blank" rel="noopener"><i class="fa-solid fa-link"></i> doi.org/10.1109/CPERE65146.2025.11240075</a>
+      </div>
+      <div class="pub-card conf reveal">
+        <div class="pub-top"><div class="pub-title">Comparison of ANN and CNN Models for Misfire Detection in Vehicle Engine at Different RPMs with Low-Cost ADXL1002 Accelerometer</div></div>
+        <div class="pub-authors">M. Ahsan, D. Bismor &amp; P. Fabis (Sep 2024)</div>
+        <div class="pub-meta">IEEE Signal Processing: Algorithms, Architectures, Arrangements and Applications (SPA) 2024, Poznań, Poland, pp. 60–65</div>
+        <a class="pub-link" href="https://doi.org/10.23919/SPA61993.2024.10715607" target="_blank" rel="noopener"><i class="fa-solid fa-link"></i> doi.org/10.23919/SPA61993.2024.10715607</a>
+      </div>
+      <div class="pub-card conf reveal">
+        <div class="pub-top"><div class="pub-title">Advanced Fault Diagnosis in Rotating Machines using 2D Grayscale Images with Improved Deep Convolutional Neural Networks</div></div>
+        <div class="pub-authors">M. Ahsan &amp; D. Bismor (Sep 2023)</div>
+        <div class="pub-meta">IEEE SPA 2023, Poznań, Poland, pp. 77–82</div>
+        <a class="pub-link" href="https://doi.org/10.23919/SPA59660.2023.10274428" target="_blank" rel="noopener"><i class="fa-solid fa-link"></i> doi.org/10.23919/SPA59660.2023.10274428</a>
+      </div>
+      <div class="pub-card conf reveal">
+        <div class="pub-top"><div class="pub-title">Calibration of a High Sampling Frequency MEMS-Based Vibration Measurement System</div></div>
+        <div class="pub-authors">M. Ahsan &amp; D. Bismor (Jun 2023)</div>
+        <div class="pub-meta">XXI Polish Control Conference (PCC2023), Gliwice, Poland, Vol. 708, pp. 294–302</div>
+        <a class="pub-link" href="https://doi.org/10.1007/978-3-031-35170-9_28" target="_blank" rel="noopener"><i class="fa-solid fa-link"></i> doi.org/10.1007/978-3-031-35170-9_28</a>
+      </div>
+      <div class="pub-card conf reveal">
+        <div class="pub-top"><div class="pub-title">Early-Stage Faults Detection using Harmony Search Algorithm and STFT-Based Spectral Kurtosis</div></div>
+        <div class="pub-authors">M. Ahsan &amp; D. Bismor (Apr 2022)</div>
+        <div class="pub-meta">Automation 2022: New Solutions and Technologies for Automation, Robotics and Measurement Techniques, Warsaw, Poland, Vol. 1427, pp. 75–84</div>
+        <a class="pub-link" href="https://doi.org/10.1007/978-3-031-03502-9_8" target="_blank" rel="noopener"><i class="fa-solid fa-link"></i> doi.org/10.1007/978-3-031-03502-9_8</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= GRANTS ================= -->
+<section id="grants">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="eyebrow">Funding &amp; Recognition</span>
+      <h2>Grants, Projects &amp; Awards</h2>
+      <p>Competitive funding, mobility grants and honours secured throughout doctoral and postdoctoral research.</p>
+      <a href="projects.html" target="_blank" rel="noopener" class="btn btn-primary" style="margin-top:20px;"><i class="fa-solid fa-folder-open"></i> View All Projects &amp; Grants</a>
+    </div>
+    <div class="grants-grid">
+      <div class="grant-card featured reveal">
+        <div class="grant-icon"><i class="fa-solid fa-award"></i></div>
+        <span class="grant-date">16 Feb 2026</span>
+        <h3>Seal of Excellence — HORIZON-MSCA-2025-PF-01-01</h3>
+        <p>Awarded for a Marie Skłodowska-Curie Actions postdoctoral fellowship proposal, recognised as high-quality in a highly competitive evaluation (Project: 101284098 — COBRAIN).</p>
+      </div>
+      <div class="grant-card featured reveal">
+        <div class="grant-icon"><i class="fa-solid fa-medal"></i></div>
+        <span class="grant-date">31 Dec 2023</span>
+        <h3>Best PhD Student</h3>
+        <p>Excellence Initiative – Research University Programme, funded by the Rector of the Silesian University of Technology (Project: RJO15.5033.450.2023).</p>
+      </div>
+      <div class="grant-card reveal">
+        <div class="grant-icon"><i class="fa-solid fa-wind"></i></div>
+        <span class="grant-date">Oct 2025 – M 2026</span>
+        <h3>IDUB Postdoctoral Research Project</h3>
+        <p>SCADA-based condition monitoring and fault detection framework for wind turbines. Funder: AGH University of Krakow (IDUB 501.696.7996).</p>
+        <div class="outcome"><i class="fa-solid fa-check"></i> Outcome: publication in Energies (Q1, IF 3.2)</div>
+      </div>
+      <div class="grant-card reveal">
+        <div class="grant-icon"><i class="fa-solid fa-car"></i></div>
+        <span class="grant-date">Oct 2020 – Sep 2024</span>
+        <h3>Doctoral Research Project</h3>
+        <p>Vehicle Diagnostics using AI and Digital Signal Processing. Funder: Polish Government Scholarship + Silesian University of Technology.</p>
+        <div class="outcome"><i class="fa-solid fa-check"></i> Outcome: dissertation defended Jul 2025</div>
+      </div>
+      <div class="grant-card reveal">
+        <div class="grant-icon"><i class="fa-solid fa-plane"></i></div>
+        <span class="grant-date">Jul – Oct 2022</span>
+        <h3>Erasmus+ Mobility Grant</h3>
+        <p>Co-funded by the EU for research on vibration-based condition monitoring of mechatronic systems using AI and DSP (2021-1-PL01-KA131-HED-000005374).</p>
+      </div>
+      <div class="grant-card reveal">
+        <div class="grant-icon"><i class="fa-solid fa-globe"></i></div>
+        <span class="grant-date">Sep 2021</span>
+        <h3>NAWA PROM Mobility Grant</h3>
+        <p>Co-funded by the European Social Fund for research on artificial intelligence algorithms (08/030/FSD20/0078).</p>
+      </div>
+      <div class="grant-card reveal">
+        <div class="grant-icon"><i class="fa-solid fa-flask"></i></div>
+        <span class="grant-date">Jun – Dec 2023</span>
+        <h3>Young Scientist Research Grant</h3>
+        <p>Condition monitoring and fault diagnosis using advanced ML methods. Funder: Silesian University of Technology (02/050/BKM23/0036).</p>
+        <div class="outcome"><i class="fa-solid fa-check"></i> Led to IEEE SPA 2023/2024 papers, OSA 2024 presentation</div>
+      </div>
+      <div class="grant-card reveal">
+        <div class="grant-icon"><i class="fa-solid fa-flask"></i></div>
+        <span class="grant-date">Jun – Dec 2021</span>
+        <h3>Young Scientist Research Grant</h3>
+        <p>Filter design using evolutionary algorithms for non-stationary signal estimation. Funder: Silesian University of Technology (02/050/BKM21/0021).</p>
+        <div class="outcome"><i class="fa-solid fa-check"></i> Led to IEEE Trans. I&amp;M (Q1, IF 5.9) publication</div>
+      </div>
+      <div class="grant-card reveal">
+        <div class="grant-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+        <span class="grant-date">2020 – 2024</span>
+        <h3>Polish Government Scholarship</h3>
+        <p>Funded PhD study and research at the Silesian University of Technology, Gliwice, Poland (Student No. 4949).</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= TEACHING ================= -->
+<section id="teaching" class="alt">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="eyebrow">Pedagogy</span>
+      <h2>Teaching Experience</h2>
+      <p>Courses taught as Teaching Assistant, with full lecture plans, slides, and student projects available in the course hub.</p>
+      <a href="courses.html" target="_blank" rel="noopener" class="btn btn-primary" style="margin-top:20px;"><i class="fa-solid fa-chalkboard-user"></i> Browse Course Hub</a>
+    </div>
+    <div class="teach-grid">
+      <div class="teach-card reveal">
+        <h3><i class="fa-solid fa-chalkboard-user"></i> Teaching Assistant</h3>
+        <p style="color:var(--muted);font-size:0.92rem;">Department of Measurements and Control Systems, Silesian University of Technology, Poland &middot; Oct 2020 – Sep 2024</p>
+        <p style="margin-top:12px;color:var(--text);font-size:0.95rem;">Delivered high-level laboratory instruction to engineering students, with a teaching philosophy centered on bridging theoretical mathematical concepts with practical, hands-on industrial applications.</p>
+        <div class="course-pills">
+          <a href="course-numerical-methods.html" target="_blank" rel="noopener" class="course-pill">Numerical Methods</a>
+          <a href="course-fundamentals-measurements.html" target="_blank" rel="noopener" class="course-pill">Fundamentals of Measurements</a>
+          <a href="course-computer-networks.html" target="_blank" rel="noopener" class="course-pill">Computer Networks</a>
+          <a href="course-system-identification.html" target="_blank" rel="noopener" class="course-pill">System Identification</a>
+        </div>
+      </div>
+      <div class="teach-card reveal">
+        <h3><i class="fa-solid fa-people-group"></i> Pedagogical Training</h3>
+        <p style="color:var(--muted);font-size:0.92rem;">European University on Responsible Consumption and Production &middot; Jan – Mar 2022</p>
+        <p style="margin-top:12px;color:var(--text);font-size:0.95rem;">Completed specialized training on the "Implementation of Interdisciplinary Project-Based Learning (PBL) Projects," mastering the student-centered approach to facilitate collaborative, problem-solving learning environments beyond traditional rote instruction.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= OTHER INFO ================= -->
+<section id="other">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="eyebrow">Additional Information</span>
+      <h2>Languages, Memberships &amp; Service</h2>
+    </div>
+    <div class="other-grid">
+      <div class="other-card reveal">
+        <h3><i class="fa-solid fa-language"></i> Languages</h3>
+        <ul><li>Fluent English (entire education conducted in English)</li></ul>
+      </div>
+      <div class="other-card reveal">
+        <h3><i class="fa-solid fa-id-badge"></i> Professional Memberships</h3>
+        <ul>
+          <li><strong>Registered Engineer</strong>, Pakistan Engineering Council (Reg. No. ELECT/39269)</li>
+          <li><strong>Member</strong>, International Association of Engineers, IAENG (No. 141064)</li>
+        </ul>
+      </div>
+      <div class="other-card reveal">
+        <h3><i class="fa-solid fa-magnifying-glass"></i> Peer-Review Activities</h3>
+        <ul><li>Reviewer for IEEE Access, IEEE Transactions, and MDPI journals</li></ul>
+      </div>
+      <div class="other-card reveal">
+        <h3><i class="fa-solid fa-certificate"></i> Key Professional Courses</h3>
+        <ul>
+          <li>Introduction to Guided Wave Testing V1.0 — Eddyfi Technologies (2025)</li>
+          <li>Approximation of Mass and Damping Matrices in Structural Dynamics — Budapest University of Technology and Economics (2022)</li>
+          <li>Multidisciplinary Optimization &amp; ML for Engineering Design — ITB/Tohoku/HKUST (2021)</li>
+          <li>Reinforcement Learning Virtual School — ANITI (2021)</li>
+          <li>AI in Engineering Applications, Innovations &amp; Future Trends — Pakistan Engineering Council (2025)</li>
+        </ul>
+      </div>
+      <div class="other-card reveal">
+        <h3><i class="fa-solid fa-file-lines"></i> Doctoral Dissertation</h3>
+        <ul><li>"Vehicle Diagnostics using Artificial Intelligence and Digital Signal Processing Methods," Silesian University of Technology (Jul 2025) — <a href="https://repolis.bg.polsl.pl/dlibra/publication/90344/edition/80858/content" target="_blank" rel="noopener" style="color:var(--blue);">view online</a></li></ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <p>&copy; <span id="year"></span> Dr. Muhammad Ahsan. All rights reserved.</p>
+  </div>
+</footer>
+
+<button class="back-to-top" id="backToTop" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></button>
+
+<script>
+  // Mobile menu
+  const hamburger = document.getElementById('hamburger');
+  const navLinks = document.getElementById('navLinks');
+  hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('active');
+    navLinks.classList.toggle('active');
+  });
+  document.querySelectorAll('.nav-link').forEach(link => {
+    link.addEventListener('click', () => {
+      hamburger.classList.remove('active');
+      navLinks.classList.remove('active');
+    });
+  });
+
+  // Fade-in on scroll
+  const revealEls = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  revealEls.forEach(el => observer.observe(el));
+
+  // Back to top button
+  const backToTop = document.getElementById('backToTop');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 500) backToTop.classList.add('show');
+    else backToTop.classList.remove('show');
+  });
+  backToTop.addEventListener('click', () => window.scrollTo({top:0, behavior:'smooth'}));
+
+  // Publication tabs
+  document.querySelectorAll('.pub-tab').forEach(tab => {
+    tab.addEventListener('click', () => {
+      document.querySelectorAll('.pub-tab').forEach(t => t.classList.remove('active'));
+      document.querySelectorAll('.pub-group').forEach(g => g.classList.remove('active'));
+      tab.classList.add('active');
+      document.getElementById(tab.dataset.target).classList.add('active');
+    });
+  });
+
+  // Footer year
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
 </body>
-
 </html>
