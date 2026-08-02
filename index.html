@@ -151,7 +151,14 @@
     background:linear-gradient(135deg, rgba(13,148,136,0.25), rgba(37,99,235,0.25));
     border:2px solid rgba(255,255,255,0.15);
     display:flex;align-items:center;justify-content:center;
-    position:relative;
+    position:relative;overflow:visible;
+  }
+  .hero-photo .photo-clip{
+    width:100%;height:100%;border-radius:50%;overflow:hidden;
+    display:flex;align-items:center;justify-content:center;
+  }
+  .hero-photo img{
+    width:100%;height:100%;object-fit:cover;border-radius:50%;
   }
   .hero-photo i{font-size:5.5rem;color:rgba(255,255,255,0.35);}
   .hero-photo::after{
@@ -422,7 +429,7 @@
       <div class="tl-item reveal">
         <div class="tl-dot"></div>
         <div class="tl-card">
-          <span class="tl-date">Oct 2025 – 2026</span>
+          <span class="tl-date">Oct 2025 – M. 2026</span>
           <h3>Postdoctoral Researcher (Research Assistant Professor)</h3>
           <div class="tl-org">Faculty of Mechanical Engineering and Robotics, AGH University of Science and Technology, Kraków, Poland</div>
           <p>Developing an integrated SCADA-based condition monitoring and fault detection framework for wind turbines, incorporating image analysis and trend-monitoring techniques (IDUB Excellence Initiative project).</p>
@@ -627,7 +634,7 @@
       </div>
       <div class="grant-card reveal">
         <div class="grant-icon"><i class="fa-solid fa-wind"></i></div>
-        <span class="grant-date">Oct 2025 – M 2026</span>
+        <span class="grant-date">Oct 2025 – M. 2026</span>
         <h3>IDUB Postdoctoral Research Project</h3>
         <p>SCADA-based condition monitoring and fault detection framework for wind turbines. Funder: AGH University of Krakow (IDUB 501.696.7996).</p>
         <div class="outcome"><i class="fa-solid fa-check"></i> Outcome: publication in Energies (Q1, IF 3.2)</div>
@@ -720,8 +727,8 @@
       <div class="other-card reveal">
         <h3><i class="fa-solid fa-id-badge"></i> Professional Memberships</h3>
         <ul>
-          <li><strong>Registered Engineer</strong>, Pakistan Engineering Council (Reg. No. ELECT/39269)</li>
-          <li><strong>Member</strong>, International Association of Engineers, IAENG (No. 141064)</li>
+          <li><strong>Registered Engineer</strong>, Pakistan Engineering Council</li>
+          <li><strong>Member</strong>, International Association of Engineers, IAENG</li>
         </ul>
       </div>
       <div class="other-card reveal">
